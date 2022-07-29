@@ -1,0 +1,6 @@
+devel_space: /home/alessio/RobotProgrammingProject/project_workspace/devel
+install: false
+install_space: /home/alessio/RobotProgrammingProject/project_workspace/install
+profile: default
+source_space: /home/alessio/RobotProgrammingProject/project_workspace/src
+workspace: /home/alessio/RobotProgrammingProject/project_workspace
