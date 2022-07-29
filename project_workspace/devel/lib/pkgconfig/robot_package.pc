@@ -1,0 +1,1 @@
+/home/alessio/RobotProgrammingProject/project_workspace/devel/.private/robot_package/lib/pkgconfig/robot_package.pc

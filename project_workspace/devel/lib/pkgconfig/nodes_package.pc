@@ -1,0 +1,1 @@
+/home/alessio/RobotProgrammingProject/project_workspace/devel/.private/nodes_package/lib/pkgconfig/nodes_package.pc

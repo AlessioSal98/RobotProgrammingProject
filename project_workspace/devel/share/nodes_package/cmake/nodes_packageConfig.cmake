@@ -1,0 +1,1 @@
+/home/alessio/RobotProgrammingProject/project_workspace/devel/.private/nodes_package/share/nodes_package/cmake/nodes_packageConfig.cmake

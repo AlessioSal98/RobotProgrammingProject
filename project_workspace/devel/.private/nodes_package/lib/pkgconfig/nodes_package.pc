@@ -1,0 +1,8 @@
+prefix=/home/alessio/RobotProgrammingProject/project_workspace/devel/.private/nodes_package
+
+Name: nodes_package
+Description: Description of nodes_package
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 
