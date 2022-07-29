@@ -168,6 +168,19 @@ depend:
 .PHONY : depend
 
 #=============================================================================
+# Target rules for targets named sender
+
+# Build rule for target.
+sender: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 sender
+.PHONY : sender
+
+# fast build rule for target.
+sender/fast:
+	$(MAKE) -f CMakeFiles/sender.dir/build.make CMakeFiles/sender.dir/build
+.PHONY : sender/fast
+
+#=============================================================================
 # Target rules for targets named rosgraph_msgs_generate_messages_eus
 
 # Build rule for target.
@@ -609,6 +622,33 @@ gtest/fast:
 	$(MAKE) -f gtest/googletest/CMakeFiles/gtest.dir/build.make gtest/googletest/CMakeFiles/gtest.dir/build
 .PHONY : gtest/fast
 
+src/sender.o: src/sender.cpp.o
+
+.PHONY : src/sender.o
+
+# target to build an object file
+src/sender.cpp.o:
+	$(MAKE) -f CMakeFiles/sender.dir/build.make CMakeFiles/sender.dir/src/sender.cpp.o
+.PHONY : src/sender.cpp.o
+
+src/sender.i: src/sender.cpp.i
+
+.PHONY : src/sender.i
+
+# target to preprocess a source file
+src/sender.cpp.i:
+	$(MAKE) -f CMakeFiles/sender.dir/build.make CMakeFiles/sender.dir/src/sender.cpp.i
+.PHONY : src/sender.cpp.i
+
+src/sender.s: src/sender.cpp.s
+
+.PHONY : src/sender.s
+
+# target to generate assembly for a file
+src/sender.cpp.s:
+	$(MAKE) -f CMakeFiles/sender.dir/build.make CMakeFiles/sender.dir/src/sender.cpp.s
+.PHONY : src/sender.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -619,6 +659,7 @@ help:
 	@echo "... install"
 	@echo "... list_install_components"
 	@echo "... edit_cache"
+	@echo "... sender"
 	@echo "... install/local"
 	@echo "... rosgraph_msgs_generate_messages_eus"
 	@echo "... test"
@@ -656,6 +697,9 @@ help:
 	@echo "... gmock"
 	@echo "... gtest_main"
 	@echo "... gtest"
+	@echo "... src/sender.o"
+	@echo "... src/sender.i"
+	@echo "... src/sender.s"
 .PHONY : help
 
 
