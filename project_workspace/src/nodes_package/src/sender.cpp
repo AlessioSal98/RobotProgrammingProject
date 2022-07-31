@@ -13,6 +13,7 @@ int main(int argc, char **argv)
 {
   ros::init(argc, argv, "my_sender"); //Node creation
   ros::NodeHandle n; 
+  ros::Publisher chatter_pub = n.advertise<std_msgs::String>("chatter", 1000);
   ros::Publisher robot_pub = n.advertise<std_msgs::Float64>("/robot_arm/joint2_position_controller/command", 1000);
 
    ros::Rate loop_rate(1000);
@@ -22,10 +23,15 @@ int main(int argc, char **argv)
    */
   int count = 0;
   std_msgs::Float64 angle;
+  angle.data = 1.57;
   while (ros::ok())
   {
- 
+    /**
+     * This is a message object. You stuff it with data, and then publish it.
+     */
+    
     cout << "Write the degrees of the orientation" << endl;
+    std_msgs::String msg;
     double angleValue;
     cin >> angleValue;
     angle.data = angleValue;
