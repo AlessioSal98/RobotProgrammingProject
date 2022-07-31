@@ -25,7 +25,7 @@
 
     <xacro:macro name="m_link_cylinder" params="name origin_xyz origin_rpy radius length mass ixx ixy ixz iyy iyz izz">
         <link name="${name}">
-
+            <gravity>0</gravity>
             <inertial>
                 <mass value="${mass}" />
                 <origin rpy="${origin_rpy}" xyz="${origin_xyz}" />

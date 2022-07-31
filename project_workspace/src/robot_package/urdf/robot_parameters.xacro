@@ -4,4 +4,5 @@
   <xacro:property name="l01" value="link_01" />
   <xacro:property name="l02" value="link_02" />
   <xacro:property name="l03" value="link_03" />
+  <xacro:property name="lee" value="link_ee" />
 </robot>
