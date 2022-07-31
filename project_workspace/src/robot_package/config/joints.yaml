@@ -1,3 +1,4 @@
+
 # Publish all joint states -----------------------------------
 joint_state_controller:
   type: joint_state_controller/JointStateController
@@ -11,11 +12,11 @@ joint1_position_controller:
 joint2_position_controller:
   type: effort_controllers/JointPositionController
   joint: link_01__link_02
-  pid: {p: 50000.0, i: 100, d: 2000.0}
+  pid: {p: 100000.0, i: 100000.0, d: 1000.0}
 joint3_position_controller:
   type: effort_controllers/JointPositionController
   joint: link_02__link_03
-  pid: {p: 20000.0, i: 50, d: 1000.0}
+  pid: {p: 100000.0, i: 100000.0, d: 1000.0}
 joint4_position_controller:
   type: effort_controllers/JointPositionController
   joint: link_03__link_04

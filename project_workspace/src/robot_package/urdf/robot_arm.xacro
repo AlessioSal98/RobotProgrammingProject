@@ -22,7 +22,7 @@
     <xacro:m_joint name="${l00}__${l01}"
                    type="revolute"
                    axis_xyz="0 0 1"
-                   origin_rpy="0 0 0" origin_xyz="0 0 -0.5"
+                   origin_rpy="0 0 0" origin_xyz="0 0 0"
                    parent="world"
                    child="${l01}"
                    limit_e="1000"
@@ -45,7 +45,7 @@
                    origin_rpy="0 1.57 0" origin_xyz="0 0 2"
                    parent="${l01}"
                    child="${l02}"
-                   limit_e="1000"
+                   limit_e="10"
                    limit_l="-3.14"
                    limit_u="3.14"
                    limit_v="0.5"/>
@@ -65,7 +65,7 @@
                    origin_rpy="0 0 0" origin_xyz="0 0 1"
                    parent="${l02}"
                    child="${l03}"
-                   limit_e="1000"
+                   limit_e="10"
                    limit_l="-3.14"
                    limit_u="3.14"
                    limit_v="0.5"/>
@@ -78,6 +78,26 @@
                 izz="0"
                 radius = "0.1"
                 length="1"/>
+    
+     <xacro:m_joint name="${l03}__${lee}"
+                   type="revolute"
+                   axis_xyz="0 1 0"
+                   origin_rpy="0 0 0" origin_xyz="0 0 1"
+                   parent="${l03}"
+                   child="${lee}"
+                   limit_e="10"
+                   limit_l="0"
+                   limit_u="0"
+                   limit_v="0.5"/>
+
+    <xacro:m_link_cylinder name="${lee}"
+                origin_rpy="0 0 0" origin_xyz="0 0 0"
+                mass = "0.05"
+                ixx="0" ixy="0" ixz="0" 
+                iyy="0" iyz="0" 
+                izz="0"
+                radius = "0.01"
+                length="0"/>
     <gazebo>
         <plugin name ="gazebo_ros_control" filename="libgazebo_ros_control.so">
         </plugin>
