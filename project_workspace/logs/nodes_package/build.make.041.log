@@ -1,0 +1,42 @@
+[35m[1mScanning dependencies of target sender[0m
+[ 50%] [32mBuilding CXX object CMakeFiles/sender.dir/src/sender.cpp.o[0m
+[01m[K/home/alessio/RobotProgrammingProject/project_workspace/src/nodes_package/src/sender.cpp:[m[K In function ‘[01m[Kint main(int, char**)[m[K’:
+[01m[K/home/alessio/RobotProgrammingProject/project_workspace/src/nodes_package/src/sender.cpp:40:24:[m[K [01;31m[Kerror: [m[Kthe value of ‘[01m[Kchoice[m[K’ is not usable in a constant expression
+   40 |       case (choice == 1[01;31m[K)[m[K:
+      |                        [01;31m[K^[m[K
+[01m[K/home/alessio/RobotProgrammingProject/project_workspace/src/nodes_package/src/sender.cpp:27:7:[m[K [01;36m[Knote: [m[K‘[01m[Kint choice[m[K’ is not const
+   27 |   int [01;36m[Kchoice[m[K;
+      |       [01;36m[K^~~~~~[m[K
+[01m[K/home/alessio/RobotProgrammingProject/project_workspace/src/nodes_package/src/sender.cpp:40:24:[m[K [01;31m[Kerror: [m[Kthe value of ‘[01m[Kchoice[m[K’ is not usable in a constant expression
+   40 |       case (choice == 1[01;31m[K)[m[K:
+      |                        [01;31m[K^[m[K
+[01m[K/home/alessio/RobotProgrammingProject/project_workspace/src/nodes_package/src/sender.cpp:27:7:[m[K [01;36m[Knote: [m[K‘[01m[Kint choice[m[K’ is not const
+   27 |   int [01;36m[Kchoice[m[K;
+      |       [01;36m[K^~~~~~[m[K
+[01m[K/home/alessio/RobotProgrammingProject/project_workspace/src/nodes_package/src/sender.cpp:59:24:[m[K [01;31m[Kerror: [m[Kthe value of ‘[01m[Kchoice[m[K’ is not usable in a constant expression
+   59 |       case (choice == 2[01;31m[K)[m[K:
+      |                        [01;31m[K^[m[K
+[01m[K/home/alessio/RobotProgrammingProject/project_workspace/src/nodes_package/src/sender.cpp:27:7:[m[K [01;36m[Knote: [m[K‘[01m[Kint choice[m[K’ is not const
+   27 |   int [01;36m[Kchoice[m[K;
+      |       [01;36m[K^~~~~~[m[K
+[01m[K/home/alessio/RobotProgrammingProject/project_workspace/src/nodes_package/src/sender.cpp:59:24:[m[K [01;31m[Kerror: [m[Kjump to case label
+   59 |       case (choice == 2[01;31m[K)[m[K:
+      |                        [01;31m[K^[m[K
+[01m[K/home/alessio/RobotProgrammingProject/project_workspace/src/nodes_package/src/sender.cpp:50:26:[m[K [01;36m[Knote: [m[K  crosses initialization of ‘[01m[Kstd_msgs::String msg[m[K’
+   50 |         std_msgs::String [01;36m[Kmsg[m[K;
+      |                          [01;36m[K^~~[m[K
+[01m[K/home/alessio/RobotProgrammingProject/project_workspace/src/nodes_package/src/sender.cpp:62:24:[m[K [01;31m[Kerror: [m[Kthe value of ‘[01m[Kchoice[m[K’ is not usable in a constant expression
+   62 |       case (choice == 0[01;31m[K)[m[K:
+      |                        [01;31m[K^[m[K
+[01m[K/home/alessio/RobotProgrammingProject/project_workspace/src/nodes_package/src/sender.cpp:27:7:[m[K [01;36m[Knote: [m[K‘[01m[Kint choice[m[K’ is not const
+   27 |   int [01;36m[Kchoice[m[K;
+      |       [01;36m[K^~~~~~[m[K
+[01m[K/home/alessio/RobotProgrammingProject/project_workspace/src/nodes_package/src/sender.cpp:62:24:[m[K [01;31m[Kerror: [m[Kjump to case label
+   62 |       case (choice == 0[01;31m[K)[m[K:
+      |                        [01;31m[K^[m[K
+[01m[K/home/alessio/RobotProgrammingProject/project_workspace/src/nodes_package/src/sender.cpp:50:26:[m[K [01;36m[Knote: [m[K  crosses initialization of ‘[01m[Kstd_msgs::String msg[m[K’
+   50 |         std_msgs::String [01;36m[Kmsg[m[K;
+      |                          [01;36m[K^~~[m[K
+make[2]: *** [CMakeFiles/sender.dir/build.make:63: CMakeFiles/sender.dir/src/sender.cpp.o] Error 1
+make[1]: *** [CMakeFiles/Makefile2:165: CMakeFiles/sender.dir/all] Error 2
+make: *** [Makefile:141: all] Error 2
