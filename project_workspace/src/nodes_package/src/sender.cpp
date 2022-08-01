@@ -8,13 +8,14 @@
 using namespace std;
 
 
-
 int main(int argc, char **argv)
 {
-  ros::init(argc, argv, "my_sender"); //Node creation
+  ros::init(argc, argv, "Cobot_Sender"); //Node creation
   ros::NodeHandle n; 
-  ros::Publisher chatter_pub = n.advertise<std_msgs::String>("chatter", 1000);
-  ros::Publisher robot_pub = n.advertise<std_msgs::Float64>("/robot_arm/joint2_position_controller/command", 1000);
+  //ros::Publisher chatter_pub = n.advertise<std_msgs::String>("chatter", 1000);
+  ros::Publisher joint1 = n.advertise<std_msgs::Float64>("/robot_arm/joint1_position_controller/command", 1000);
+  ros::Publisher joint2 = n.advertise<std_msgs::Float64>("/robot_arm/joint2_position_controller/command", 1000);
+  ros::Publisher joint3 = n.advertise<std_msgs::Float64>("/robot_arm/joint3_position_controller/command", 1000);
 
    ros::Rate loop_rate(1000);
   /**
@@ -23,20 +24,52 @@ int main(int argc, char **argv)
    */
   int count = 0;
   std_msgs::Float64 angle;
-  angle.data = 1.57;
-  while (ros::ok())
+  int choice;
+  bool flag = 1;
+  while (flag)
   {
     /**
      * This is a message object. You stuff it with data, and then publish it.
      */
+    cout << "1)Direct Kinematics" << endl;
+    cout << "2)Inverse Kinematics" << endl;
+    cout << "0)Exit" << endl;
+    cout << "Insert your choice:";
+    cin >> choice;
+    switch(choice){
+      case 1:
+      {
+        double q1,q2,q3;
+        cout << "DIRECT KINEMATICS" << endl;
+        cout << "Insert joint values" << endl;
+        cout << "q1:";
+        cin >> q1;
+        cout << "q2:";
+        cin >> q2;
+        cout << "q3:";
+        cin >> q3;
+        std_msgs::String msg;
+        angle.data = q1;
+        joint1.publish(angle);
+        angle.data = q2;
+        joint2.publish(angle);
+        angle.data = q3;
+        joint3.publish(angle);
+        cout << "published!" << endl;
+        break;
+      }
+      case 2:
+      {
+        cout << "INVERSE KINEMATICS" << endl;
+        break;
+      }
+      case 0:
+      {
+        flag = 0;
+        break;
+      }
+    }
     
-    cout << "Write the degrees of the orientation" << endl;
-    std_msgs::String msg;
-    double angleValue;
-    cin >> angleValue;
-    angle.data = angleValue;
-    robot_pub.publish(angle);
-    cout << "published!" << endl;
   }
 
   return 0;
