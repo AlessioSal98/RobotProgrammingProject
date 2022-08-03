@@ -133,8 +133,9 @@ include_directories(
 ## Declare a C++ executable
 ## With catkin_make all packages are built within a single CMake context
 ## The recommended prefix ensures that target names across packages don't collide
-add_library(vec_f_library src/vec_f.cpp)
+include_directories(. /usr/include/eigen3)
 add_executable(sender src/sender.cpp)
+
 
 
 ## Rename C++ executable without prefix
@@ -150,7 +151,6 @@ add_executable(sender src/sender.cpp)
 ## Specify libraries to link a library or executable target against
 target_link_libraries(sender
   ${catkin_LIBRARIES}
-  vec_f_library
 )
 
 #############

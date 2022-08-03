@@ -6,15 +6,3 @@
 
 #IncludeRegexTransform: 
 
-/home/alessio/RobotProgrammingProject/project_workspace/src/nodes_package/src/vec_f.cpp
-vec_f.h
-/home/alessio/RobotProgrammingProject/project_workspace/src/nodes_package/src/vec_f.h
-iostream
--
-assert.h
--
-
-/home/alessio/RobotProgrammingProject/project_workspace/src/nodes_package/src/vec_f.h
-iostream
--
-

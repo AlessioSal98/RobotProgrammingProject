@@ -54,7 +54,6 @@ CMAKE_BINARY_DIR = /home/alessio/RobotProgrammingProject/project_workspace/build
 
 # The main recursive "all" target.
 all: CMakeFiles/sender.dir/all
-all: CMakeFiles/vec_f_library.dir/all
 all: gtest/all
 
 .PHONY : all
@@ -66,7 +65,6 @@ preinstall: gtest/preinstall
 
 # The main recursive "clean" target.
 clean: CMakeFiles/sender.dir/clean
-clean: CMakeFiles/vec_f_library.dir/clean
 clean: CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/clean
 clean: CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/clean
 clean: CMakeFiles/roscpp_generate_messages_nodejs.dir/clean
@@ -162,7 +160,7 @@ gtest/googletest/clean: gtest/googletest/CMakeFiles/gtest.dir/clean
 # Target rules for target CMakeFiles/sender.dir
 
 # All Build rule for target.
-CMakeFiles/sender.dir/all: CMakeFiles/vec_f_library.dir/all
+CMakeFiles/sender.dir/all:
 	$(MAKE) -f CMakeFiles/sender.dir/build.make CMakeFiles/sender.dir/depend
 	$(MAKE) -f CMakeFiles/sender.dir/build.make CMakeFiles/sender.dir/build
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/alessio/RobotProgrammingProject/project_workspace/build/nodes_package/CMakeFiles --progress-num=9,10 "Built target sender"
@@ -170,7 +168,7 @@ CMakeFiles/sender.dir/all: CMakeFiles/vec_f_library.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/sender.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/alessio/RobotProgrammingProject/project_workspace/build/nodes_package/CMakeFiles 4
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/alessio/RobotProgrammingProject/project_workspace/build/nodes_package/CMakeFiles 2
 	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/sender.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/alessio/RobotProgrammingProject/project_workspace/build/nodes_package/CMakeFiles 0
 .PHONY : CMakeFiles/sender.dir/rule
@@ -184,33 +182,6 @@ sender: CMakeFiles/sender.dir/rule
 CMakeFiles/sender.dir/clean:
 	$(MAKE) -f CMakeFiles/sender.dir/build.make CMakeFiles/sender.dir/clean
 .PHONY : CMakeFiles/sender.dir/clean
-
-#=============================================================================
-# Target rules for target CMakeFiles/vec_f_library.dir
-
-# All Build rule for target.
-CMakeFiles/vec_f_library.dir/all:
-	$(MAKE) -f CMakeFiles/vec_f_library.dir/build.make CMakeFiles/vec_f_library.dir/depend
-	$(MAKE) -f CMakeFiles/vec_f_library.dir/build.make CMakeFiles/vec_f_library.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/alessio/RobotProgrammingProject/project_workspace/build/nodes_package/CMakeFiles --progress-num=11,12 "Built target vec_f_library"
-.PHONY : CMakeFiles/vec_f_library.dir/all
-
-# Build rule for subdir invocation for target.
-CMakeFiles/vec_f_library.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/alessio/RobotProgrammingProject/project_workspace/build/nodes_package/CMakeFiles 2
-	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/vec_f_library.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/alessio/RobotProgrammingProject/project_workspace/build/nodes_package/CMakeFiles 0
-.PHONY : CMakeFiles/vec_f_library.dir/rule
-
-# Convenience name for target.
-vec_f_library: CMakeFiles/vec_f_library.dir/rule
-
-.PHONY : vec_f_library
-
-# clean rule for target.
-CMakeFiles/vec_f_library.dir/clean:
-	$(MAKE) -f CMakeFiles/vec_f_library.dir/build.make CMakeFiles/vec_f_library.dir/clean
-.PHONY : CMakeFiles/vec_f_library.dir/clean
 
 #=============================================================================
 # Target rules for target CMakeFiles/rosgraph_msgs_generate_messages_eus.dir

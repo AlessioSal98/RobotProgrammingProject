@@ -1,0 +1,15 @@
+[35m[1mScanning dependencies of target sender[0m
+[ 50%] [32mBuilding CXX object CMakeFiles/sender.dir/src/sender.cpp.o[0m
+[01m[K/home/alessio/RobotProgrammingProject/project_workspace/src/nodes_package/src/sender.cpp:[m[K In function ‘[01m[Kvoid publishPosition(double*)[m[K’:
+[01m[K/home/alessio/RobotProgrammingProject/project_workspace/src/nodes_package/src/sender.cpp:95:3:[m[K [01;31m[Kerror: [m[K‘[01m[Kjoint1[m[K’ was not declared in this scope
+   95 |   [01;31m[Kjoint1[m[K.publish(angle);
+      |   [01;31m[K^~~~~~[m[K
+[01m[K/home/alessio/RobotProgrammingProject/project_workspace/src/nodes_package/src/sender.cpp:97:3:[m[K [01;31m[Kerror: [m[K‘[01m[Kjoint2[m[K’ was not declared in this scope
+   97 |   [01;31m[Kjoint2[m[K.publish(angle);
+      |   [01;31m[K^~~~~~[m[K
+[01m[K/home/alessio/RobotProgrammingProject/project_workspace/src/nodes_package/src/sender.cpp:99:3:[m[K [01;31m[Kerror: [m[K‘[01m[Kjoint3[m[K’ was not declared in this scope
+   99 |   [01;31m[Kjoint3[m[K.publish(angle);
+      |   [01;31m[K^~~~~~[m[K
+make[2]: *** [CMakeFiles/sender.dir/build.make:63: CMakeFiles/sender.dir/src/sender.cpp.o] Error 1
+make[1]: *** [CMakeFiles/Makefile2:165: CMakeFiles/sender.dir/all] Error 2
+make: *** [Makefile:141: all] Error 2
