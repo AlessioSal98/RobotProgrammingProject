@@ -1,0 +1,12 @@
+[01m[K/home/alessio/RobotProgrammingProject/project_workspace/src/nodes_package/src/sender.cpp:[m[K In function ‘[01m[KEigen::Matrix2f solveSysetem(double, double, double, double, double, double)[m[K’:
+[01m[K/home/alessio/RobotProgrammingProject/project_workspace/src/nodes_package/src/sender.cpp:34:10:[m[K [01;31m[Kerror: [m[K‘[01m[Ka[m[K’ was not declared in this scope
+   34 |   return [01;31m[Ka[m[K;
+      |          [01;31m[K^[m[K
+[01m[K/home/alessio/RobotProgrammingProject/project_workspace/src/nodes_package/src/sender.cpp:[m[K In function ‘[01m[Kbool analyticalInverseKinematics(double*, double*)[m[K’:
+[01m[K/home/alessio/RobotProgrammingProject/project_workspace/src/nodes_package/src/sender.cpp:57:24:[m[K [01;31m[Kerror: [m[K‘[01m[KsolveSystem[m[K’ was not declared in this scope; did you mean ‘[01m[KsolveSysetem[m[K’?
+   57 |         Matrix2f xpp = [01;31m[KsolveSystem[m[K(cosq3,q3pos,q1pos,px,py,pz);
+      |                        [01;31m[K^~~~~~~~~~~[m[K
+      |                        [32m[KsolveSysetem[m[K
+make[2]: *** [CMakeFiles/sender.dir/build.make:63: CMakeFiles/sender.dir/src/sender.cpp.o] Error 1
+make[1]: *** [CMakeFiles/Makefile2:165: CMakeFiles/sender.dir/all] Error 2
+make: *** [Makefile:141: all] Error 2

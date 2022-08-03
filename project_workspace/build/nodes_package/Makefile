@@ -181,19 +181,6 @@ sender/fast:
 .PHONY : sender/fast
 
 #=============================================================================
-# Target rules for targets named vec_f_library
-
-# Build rule for target.
-vec_f_library: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 vec_f_library
-.PHONY : vec_f_library
-
-# fast build rule for target.
-vec_f_library/fast:
-	$(MAKE) -f CMakeFiles/vec_f_library.dir/build.make CMakeFiles/vec_f_library.dir/build
-.PHONY : vec_f_library/fast
-
-#=============================================================================
 # Target rules for targets named rosgraph_msgs_generate_messages_eus
 
 # Build rule for target.
@@ -662,33 +649,6 @@ src/sender.cpp.s:
 	$(MAKE) -f CMakeFiles/sender.dir/build.make CMakeFiles/sender.dir/src/sender.cpp.s
 .PHONY : src/sender.cpp.s
 
-src/vec_f.o: src/vec_f.cpp.o
-
-.PHONY : src/vec_f.o
-
-# target to build an object file
-src/vec_f.cpp.o:
-	$(MAKE) -f CMakeFiles/vec_f_library.dir/build.make CMakeFiles/vec_f_library.dir/src/vec_f.cpp.o
-.PHONY : src/vec_f.cpp.o
-
-src/vec_f.i: src/vec_f.cpp.i
-
-.PHONY : src/vec_f.i
-
-# target to preprocess a source file
-src/vec_f.cpp.i:
-	$(MAKE) -f CMakeFiles/vec_f_library.dir/build.make CMakeFiles/vec_f_library.dir/src/vec_f.cpp.i
-.PHONY : src/vec_f.cpp.i
-
-src/vec_f.s: src/vec_f.cpp.s
-
-.PHONY : src/vec_f.s
-
-# target to generate assembly for a file
-src/vec_f.cpp.s:
-	$(MAKE) -f CMakeFiles/vec_f_library.dir/build.make CMakeFiles/vec_f_library.dir/src/vec_f.cpp.s
-.PHONY : src/vec_f.cpp.s
-
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -700,7 +660,6 @@ help:
 	@echo "... list_install_components"
 	@echo "... edit_cache"
 	@echo "... sender"
-	@echo "... vec_f_library"
 	@echo "... install/local"
 	@echo "... rosgraph_msgs_generate_messages_eus"
 	@echo "... test"
@@ -741,9 +700,6 @@ help:
 	@echo "... src/sender.o"
 	@echo "... src/sender.i"
 	@echo "... src/sender.s"
-	@echo "... src/vec_f.o"
-	@echo "... src/vec_f.i"
-	@echo "... src/vec_f.s"
 .PHONY : help
 
 

@@ -61,7 +61,7 @@
     
     <xacro:m_joint name="${l02}__${l03}"
                    type="revolute"
-                   axis_xyz="0 1 0"
+                   axis_xyz="0 -1 0"
                    origin_rpy="0 0 0" origin_xyz="0 0 1"
                    parent="${l02}"
                    child="${l03}"

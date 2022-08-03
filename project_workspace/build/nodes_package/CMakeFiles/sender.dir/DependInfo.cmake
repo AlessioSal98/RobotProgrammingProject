@@ -19,11 +19,12 @@ set(CMAKE_TARGET_DEFINITIONS_CXX
 set(CMAKE_CXX_TARGET_INCLUDE_PATH
   "/opt/ros/noetic/include"
   "/opt/ros/noetic/share/xmlrpcpp/cmake/../../../include/xmlrpcpp"
+  "/home/alessio/RobotProgrammingProject/project_workspace/src/nodes_package/."
+  "/usr/include/eigen3"
   )
 
 # Targets to which this target links.
 set(CMAKE_TARGET_LINKED_INFO_FILES
-  "/home/alessio/RobotProgrammingProject/project_workspace/build/nodes_package/CMakeFiles/vec_f_library.dir/DependInfo.cmake"
   )
 
 # Fortran module output directory.

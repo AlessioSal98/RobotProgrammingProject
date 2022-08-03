@@ -1,0 +1,7 @@
+[01m[K/home/alessio/RobotProgrammingProject/project_workspace/src/nodes_package/src/sender.cpp:[m[K In function ‘[01m[Kdouble* analyticalInverseKinematics(double*)[m[K’:
+[01m[K/home/alessio/RobotProgrammingProject/project_workspace/src/nodes_package/src/sender.cpp:41:10:[m[K [01;35m[Kwarning: [m[Kaddress of local variable ‘[01m[Ka[m[K’ returned [[01;35m[K-Wreturn-local-addr[m[K]
+   41 |   return [01;35m[Ka[m[K;
+      |          [01;35m[K^[m[K
+[01m[K/home/alessio/RobotProgrammingProject/project_workspace/src/nodes_package/src/sender.cpp:40:10:[m[K [01;36m[Knote: [m[Kdeclared here
+   40 |   double [01;36m[Ka[m[K[] = {1,2,3};
+      |          [01;36m[K^[m[K
