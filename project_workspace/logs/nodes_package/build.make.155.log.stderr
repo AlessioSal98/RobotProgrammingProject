@@ -1,0 +1,10 @@
+[01m[K/home/alessio/RobotProgrammingProject/project_workspace/src/nodes_package/src/sender.cpp:47:93:[m[K [01;31m[Kerror: [m[Kexpected ‘[01m[K)[m[K’ before ‘[01m[K;[m[K’ token
+   47 | bool analyticalInverseKinematics[34m[K([m[Kdouble coords[],double q[],Matrix<double, 4, 3> &qsolutions[01;31m[K;[m[K){
+      |                                 [34m[K~[m[K                                                           [01;31m[K^[m[K
+      |                                                                                             [32m[K)[m[K
+[01m[K/home/alessio/RobotProgrammingProject/project_workspace/src/nodes_package/src/sender.cpp:47:94:[m[K [01;31m[Kerror: [m[Kexpected unqualified-id before ‘[01m[K)[m[K’ token
+   47 | bool analyticalInverseKinematics(double coords[],double q[],Matrix<double, 4, 3> &qsolutions;[01;31m[K)[m[K{
+      |                                                                                              [01;31m[K^[m[K
+make[2]: *** [CMakeFiles/sender.dir/build.make:63: CMakeFiles/sender.dir/src/sender.cpp.o] Error 1
+make[1]: *** [CMakeFiles/Makefile2:165: CMakeFiles/sender.dir/all] Error 2
+make: *** [Makefile:141: all] Error 2
