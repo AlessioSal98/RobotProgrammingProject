@@ -26,8 +26,8 @@
                    parent="world"
                    child="${l01}"
                    limit_e="1000"
-                   limit_l="-6,28319"
-                   limit_u="6,28319"
+                   limit_l="-6.28319"
+                   limit_u="6.28319"
                    limit_v="0.5"/>
     
     <xacro:m_link_cylinder name="${l01}"
@@ -41,7 +41,7 @@
 
     <xacro:m_joint name="${l01}__${l02}"
                    type="revolute"
-                   axis_xyz="0 1 0"
+                   axis_xyz="0 -1 0"
                    origin_rpy="0 1.57 0" origin_xyz="0 0 2"
                    parent="${l01}"
                    child="${l02}"

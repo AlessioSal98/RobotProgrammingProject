@@ -3,6 +3,7 @@
 
 CMakeFiles/sender.dir/src/sender.cpp.o
  /home/alessio/RobotProgrammingProject/project_workspace/src/nodes_package/src/sender.cpp
+ /home/alessio/RobotProgrammingProject/project_workspace/src/nodes_package/src/vec_f.h
  /opt/ros/noetic/include/ros/advertise_options.h
  /opt/ros/noetic/include/ros/advertise_service_options.h
  /opt/ros/noetic/include/ros/assert.h

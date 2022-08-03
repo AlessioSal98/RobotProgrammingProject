@@ -1,0 +1,27 @@
+[01m[K/home/alessio/RobotProgrammingProject/project_workspace/src/nodes_package/src/sender.cpp:[m[K In function ‘[01m[Kbool checkWorkspace(double*)[m[K’:
+[01m[K/home/alessio/RobotProgrammingProject/project_workspace/src/nodes_package/src/sender.cpp:15:3:[m[K [01;31m[Kerror: [m[Kexpected ‘[01m[K,[m[K’ or ‘[01m[K;[m[K’ before ‘[01m[Kdouble[m[K’
+   15 |   [01;31m[Kdouble[m[K diffY = coords[1]-origin[1]
+      |   [01;31m[K^~~~~~[m[K
+[01m[K/home/alessio/RobotProgrammingProject/project_workspace/src/nodes_package/src/sender.cpp:18:18:[m[K [01;31m[Kerror: [m[K‘[01m[KdiffY[m[K’ was not declared in this scope; did you mean ‘[01m[KdiffX[m[K’?
+   18 |   if(((diffX)^2+([01;31m[KdiffY[m[K)^2+(diffZ)^2)<=radius^2)
+      |                  [01;31m[K^~~~~[m[K
+      |                  [32m[KdiffX[m[K
+[01m[K/home/alessio/RobotProgrammingProject/project_workspace/src/nodes_package/src/sender.cpp:18:28:[m[K [01;31m[Kerror: [m[K‘[01m[KdiffZ[m[K’ was not declared in this scope; did you mean ‘[01m[KdiffX[m[K’?
+   18 |   if(((diffX)^2+(diffY)^2+([01;31m[KdiffZ[m[K)^2)<=radius^2)
+      |                            [01;31m[K^~~~~[m[K
+      |                            [32m[KdiffX[m[K
+[01m[K/home/alessio/RobotProgrammingProject/project_workspace/src/nodes_package/src/sender.cpp:20:5:[m[K [01;31m[Kerror: [m[K‘[01m[Kres[m[K’ was not declared in this scope; did you mean ‘[01m[Kros[m[K’?
+   20 |     [01;31m[Kres[m[K = true;
+      |     [01;31m[K^~~[m[K
+      |     [32m[Kros[m[K
+[01m[K/home/alessio/RobotProgrammingProject/project_workspace/src/nodes_package/src/sender.cpp:22:5:[m[K [01;31m[Kerror: [m[K‘[01m[Kres[m[K’ was not declared in this scope; did you mean ‘[01m[Kros[m[K’?
+   22 |     [01;31m[Kres[m[K = false;
+      |     [01;31m[K^~~[m[K
+      |     [32m[Kros[m[K
+[01m[K/home/alessio/RobotProgrammingProject/project_workspace/src/nodes_package/src/sender.cpp:24:10:[m[K [01;31m[Kerror: [m[K‘[01m[Kres[m[K’ was not declared in this scope; did you mean ‘[01m[Kros[m[K’?
+   24 |   return [01;31m[Kres[m[K;
+      |          [01;31m[K^~~[m[K
+      |          [32m[Kros[m[K
+make[2]: *** [CMakeFiles/sender.dir/build.make:63: CMakeFiles/sender.dir/src/sender.cpp.o] Error 1
+make[1]: *** [CMakeFiles/Makefile2:167: CMakeFiles/sender.dir/all] Error 2
+make: *** [Makefile:141: all] Error 2

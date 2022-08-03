@@ -19,6 +19,12 @@ std_msgs/Float64.h
 -
 iostream
 -
+vec_f.h
+/home/alessio/RobotProgrammingProject/project_workspace/src/nodes_package/src/vec_f.h
+
+/home/alessio/RobotProgrammingProject/project_workspace/src/nodes_package/src/vec_f.h
+iostream
+-
 
 /opt/ros/noetic/include/ros/advertise_options.h
 ros/forwards.h
