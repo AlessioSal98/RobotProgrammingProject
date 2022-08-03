@@ -1,0 +1,12 @@
+[01m[K/home/alessio/RobotProgrammingProject/project_workspace/src/nodes_package/src/sender.cpp:[m[K In function ‘[01m[Kint main(int, char**)[m[K’:
+[01m[K/home/alessio/RobotProgrammingProject/project_workspace/src/nodes_package/src/sender.cpp:78:27:[m[K [01;31m[Kerror: [m[Kcannot convert ‘[01m[Kdouble*[m[K’ to ‘[01m[Kdouble[m[K’
+   78 |         if(checkWorkspace([01;31m[Kcoords[m[K)){
+      |                           [01;31m[K^~~~~~[m[K
+      |                           [01;31m[K|[m[K
+      |                           [01;31m[Kdouble*[m[K
+[01m[K/home/alessio/RobotProgrammingProject/project_workspace/src/nodes_package/src/sender.cpp:11:28:[m[K [01;36m[Knote: [m[K  initializing argument 1 of ‘[01m[Kbool checkWorkspace(double)[m[K’
+   11 | bool checkWorkspace([01;36m[Kdouble coords[m[K){
+      |                     [01;36m[K~~~~~~~^~~~~~[m[K
+make[2]: *** [CMakeFiles/sender.dir/build.make:63: CMakeFiles/sender.dir/src/sender.cpp.o] Error 1
+make[1]: *** [CMakeFiles/Makefile2:167: CMakeFiles/sender.dir/all] Error 2
+make: *** [Makefile:141: all] Error 2

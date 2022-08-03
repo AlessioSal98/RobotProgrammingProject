@@ -1,0 +1,9 @@
+[01m[K/home/alessio/RobotProgrammingProject/project_workspace/src/nodes_package/src/sender.cpp:[m[K In function ‘[01m[Kbool checkWorkspace(double*)[m[K’:
+[01m[K/home/alessio/RobotProgrammingProject/project_workspace/src/nodes_package/src/sender.cpp:15:28:[m[K [01;31m[Kerror: [m[Kinvalid operands of types ‘[01m[Kdouble[m[K’ and ‘[01m[Kdouble[m[K’ to binary ‘[01m[Koperator^[m[K’
+   15 |   if(([32m[K(coords[0]-origin[0])[m[K[01;31m[K^[m[K[34m[K2+(coords[1]-origin[1])[m[K^2+(coords[2]-origin[2])^2)<=radius^2)
+      |       [32m[K~~~~~~~~~~~~~~~~~~~~~[m[K[01;31m[K^[m[K[34m[K~~~~~~~~~~~~~~~~~~~~~~~[m[K
+      |                 [32m[K|[m[K            [34m[K|[m[K
+      |                 [32m[Kdouble[m[K       [34m[Kdouble[m[K
+make[2]: *** [CMakeFiles/sender.dir/build.make:63: CMakeFiles/sender.dir/src/sender.cpp.o] Error 1
+make[1]: *** [CMakeFiles/Makefile2:167: CMakeFiles/sender.dir/all] Error 2
+make: *** [Makefile:141: all] Error 2

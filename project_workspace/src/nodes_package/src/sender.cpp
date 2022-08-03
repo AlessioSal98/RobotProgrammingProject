@@ -4,8 +4,29 @@
 #include "std_msgs/String.h"
 #include <std_msgs/Float64.h>
 #include <iostream>
+#include "vec_f.h"
 
 using namespace std;
+
+bool checkPointInsideWorkspace(double* coords){
+  double origin[] = {0,0,2};
+  double radius = 2;
+  double diffX = coords[0]-origin[0];
+  double diffY = coords[1]-origin[1];
+  double diffZ = coords[2]-origin[2];
+  bool res;
+  if(((diffX*diffX)+(diffY*diffY)+(diffZ*diffZ))<=(radius*radius))
+  {
+    res = true;
+  }else{
+    res = false;
+  }
+  return res;
+}
+
+double * analyticalInverseKinematics(double* coords){
+  
+}
 
 
 int main(int argc, char **argv)
@@ -60,7 +81,23 @@ int main(int argc, char **argv)
       }
       case 2:
       {
+        double x,y,z;
         cout << "INVERSE KINEMATICS" << endl;
+        cout << "Insert the desired coordinates:" << endl;
+        cout << "X:";
+        cin >> x;
+        cout << "Y:";
+        cin >> y;
+        cout << "Z:";
+        cin >> z;
+        double coords[3] = {x,y,z};
+        if(checkPointInsideWorkspace(coords)){
+          cout << "ok" << endl;
+        }else{
+          cout << endl << "ERROR: Coordinates outside the workspace" <<  endl << endl;
+        }
+
+
         break;
       }
       case 0:
