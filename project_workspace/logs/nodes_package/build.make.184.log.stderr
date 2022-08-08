@@ -1,0 +1,28 @@
+[01m[K/home/alessio/RobotProgrammingProject/project_workspace/src/nodes_package/src/sender.cpp:[m[K In function ‘[01m[Kint main(int, char**)[m[K’:
+[01m[K/home/alessio/RobotProgrammingProject/project_workspace/src/nodes_package/src/sender.cpp:198:14:[m[K [01;31m[Kerror: [m[Kno matching function for call to ‘[01m[KRobot_arm::Robot_arm()[m[K’
+  198 |    Robot_arm [01;31m[Kr[m[K;
+      |              [01;31m[K^[m[K
+In file included from [01m[K/home/alessio/RobotProgrammingProject/project_workspace/src/nodes_package/src/sender.cpp:9[m[K:
+[01m[K/home/alessio/RobotProgrammingProject/project_workspace/src/nodes_package/src/Robot_arm.cpp:13:5:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[KRobot_arm::Robot_arm(double, double, double)[m[K’
+   13 |     [01;36m[KRobot_arm[m[K(double d_,double l1_,double l2_){
+      |     [01;36m[K^~~~~~~~~[m[K
+[01m[K/home/alessio/RobotProgrammingProject/project_workspace/src/nodes_package/src/Robot_arm.cpp:13:5:[m[K [01;36m[Knote: [m[K  candidate expects 3 arguments, 0 provided
+[01m[K/home/alessio/RobotProgrammingProject/project_workspace/src/nodes_package/src/Robot_arm.cpp:5:8:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Kconstexpr Robot_arm::Robot_arm(const Robot_arm&)[m[K’
+    5 |  class [01;36m[KRobot_arm[m[K {
+      |        [01;36m[K^~~~~~~~~[m[K
+[01m[K/home/alessio/RobotProgrammingProject/project_workspace/src/nodes_package/src/Robot_arm.cpp:5:8:[m[K [01;36m[Knote: [m[K  candidate expects 1 argument, 0 provided
+[01m[K/home/alessio/RobotProgrammingProject/project_workspace/src/nodes_package/src/Robot_arm.cpp:5:8:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Kconstexpr Robot_arm::Robot_arm(Robot_arm&&)[m[K’
+[01m[K/home/alessio/RobotProgrammingProject/project_workspace/src/nodes_package/src/Robot_arm.cpp:5:8:[m[K [01;36m[Knote: [m[K  candidate expects 1 argument, 0 provided
+[01m[K/home/alessio/RobotProgrammingProject/project_workspace/src/nodes_package/src/sender.cpp:199:27:[m[K [01;31m[Kerror: [m[Kno match for ‘[01m[Koperator=[m[K’ (operand types are ‘[01m[KRobot_arm[m[K’ and ‘[01m[KRobot_arm*[m[K’)
+  199 |    r = new Robot_arm(2,1,1[01;31m[K)[m[K;
+      |                           [01;31m[K^[m[K
+In file included from [01m[K/home/alessio/RobotProgrammingProject/project_workspace/src/nodes_package/src/sender.cpp:9[m[K:
+[01m[K/home/alessio/RobotProgrammingProject/project_workspace/src/nodes_package/src/Robot_arm.cpp:5:8:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Kconstexpr Robot_arm& Robot_arm::operator=(const Robot_arm&)[m[K’
+    5 |  class [01;36m[KRobot_arm[m[K {
+      |        [01;36m[K^~~~~~~~~[m[K
+[01m[K/home/alessio/RobotProgrammingProject/project_workspace/src/nodes_package/src/Robot_arm.cpp:5:8:[m[K [01;36m[Knote: [m[K  no known conversion for argument 1 from ‘[01m[KRobot_arm*[m[K’ to ‘[01m[Kconst Robot_arm&[m[K’
+[01m[K/home/alessio/RobotProgrammingProject/project_workspace/src/nodes_package/src/Robot_arm.cpp:5:8:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Kconstexpr Robot_arm& Robot_arm::operator=(Robot_arm&&)[m[K’
+[01m[K/home/alessio/RobotProgrammingProject/project_workspace/src/nodes_package/src/Robot_arm.cpp:5:8:[m[K [01;36m[Knote: [m[K  no known conversion for argument 1 from ‘[01m[KRobot_arm*[m[K’ to ‘[01m[KRobot_arm&&[m[K’
+make[2]: *** [CMakeFiles/sender.dir/build.make:63: CMakeFiles/sender.dir/src/sender.cpp.o] Error 1
+make[1]: *** [CMakeFiles/Makefile2:165: CMakeFiles/sender.dir/all] Error 2
+make: *** [Makefile:141: all] Error 2

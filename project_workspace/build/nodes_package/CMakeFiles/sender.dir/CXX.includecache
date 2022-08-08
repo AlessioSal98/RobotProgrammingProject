@@ -6,6 +6,16 @@
 
 #IncludeRegexTransform: 
 
+/home/alessio/RobotProgrammingProject/project_workspace/src/nodes_package/src/Robot_arm.cpp
+iostream
+-
+Eigen/Dense
+-
+std_msgs/String.h
+/home/alessio/RobotProgrammingProject/project_workspace/src/nodes_package/src/std_msgs/String.h
+cmath
+-
+
 /home/alessio/RobotProgrammingProject/project_workspace/src/nodes_package/src/sender.cpp
 ros/ros.h
 /home/alessio/RobotProgrammingProject/project_workspace/src/nodes_package/src/ros/ros.h
@@ -23,6 +33,8 @@ cmath
 -
 Eigen/Dense
 -
+Robot_arm.cpp
+/home/alessio/RobotProgrammingProject/project_workspace/src/nodes_package/src/Robot_arm.cpp
 
 /opt/ros/noetic/include/ros/advertise_options.h
 ros/forwards.h

@@ -1,0 +1,19 @@
+In file included from [01m[K/home/alessio/RobotProgrammingProject/project_workspace/src/nodes_package/src/sender.cpp:9[m[K:
+[01m[K/home/alessio/RobotProgrammingProject/project_workspace/src/nodes_package/src/Robot_arm.cpp:[m[K In member function ‘[01m[KEigen::Vector2d Robot_arm::solveSystem(double, double, double, double, double, double)[m[K’:
+[01m[K/home/alessio/RobotProgrammingProject/project_workspace/src/nodes_package/src/Robot_arm.cpp:48:23:[m[K [01;31m[Kerror: [m[K‘[01m[Kclass Robot_arm[m[K’ has no member named ‘[01m[Kl3[m[K’; did you mean ‘[01m[Kl1[m[K’?
+   48 |     double l3 = this->[01;31m[Kl3[m[K;
+      |                       [01;31m[K^~[m[K
+      |                       [32m[Kl1[m[K
+In file included from [01m[K/home/alessio/RobotProgrammingProject/project_workspace/src/nodes_package/src/sender.cpp:9[m[K:
+[01m[K/home/alessio/RobotProgrammingProject/project_workspace/src/nodes_package/src/Robot_arm.cpp:[m[K In member function ‘[01m[Kbool Robot_arm::analyticalInverseKinematics(double*, Eigen::Matrix<double, 4, 3>&)[m[K’:
+[01m[K/home/alessio/RobotProgrammingProject/project_workspace/src/nodes_package/src/Robot_arm.cpp:63:5:[m[K [01;31m[Kerror: [m[K‘[01m[Kl3[m[K’ was not declared in this scope; did you mean ‘[01m[Kl1[m[K’?
+   63 |     [01;31m[Kl3[m[K = this->l3;
+      |     [01;31m[K^~[m[K
+      |     [32m[Kl1[m[K
+[01m[K/home/alessio/RobotProgrammingProject/project_workspace/src/nodes_package/src/Robot_arm.cpp:63:16:[m[K [01;31m[Kerror: [m[K‘[01m[Kclass Robot_arm[m[K’ has no member named ‘[01m[Kl3[m[K’; did you mean ‘[01m[Kl1[m[K’?
+   63 |     l3 = this->[01;31m[Kl3[m[K;
+      |                [01;31m[K^~[m[K
+      |                [32m[Kl1[m[K
+make[2]: *** [CMakeFiles/sender.dir/build.make:63: CMakeFiles/sender.dir/src/sender.cpp.o] Error 1
+make[1]: *** [CMakeFiles/Makefile2:165: CMakeFiles/sender.dir/all] Error 2
+make: *** [Makefile:141: all] Error 2

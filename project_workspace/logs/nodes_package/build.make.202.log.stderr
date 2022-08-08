@@ -1,0 +1,33 @@
+In file included from [01m[K/home/alessio/RobotProgrammingProject/project_workspace/src/nodes_package/src/sender.cpp:9[m[K:
+[01m[K/home/alessio/RobotProgrammingProject/project_workspace/src/nodes_package/src/Robot_arm.cpp:40:3:[m[K [01;31m[Kerror: [m[K‘[01m[KVector2d[m[K’ does not name a type
+   40 |   [01;31m[KVector2d[m[K solveSystem(double cosq3,double q3, double q1, double px, double py, double pz){
+      |   [01;31m[K^~~~~~~~[m[K
+In file included from [01m[K/home/alessio/RobotProgrammingProject/project_workspace/src/nodes_package/src/sender.cpp:9[m[K:
+[01m[K/home/alessio/RobotProgrammingProject/project_workspace/src/nodes_package/src/Robot_arm.cpp:50:52:[m[K [01;31m[Kerror: [m[K‘[01m[KMatrix[m[K’ has not been declared
+   50 |   bool analyticalInverseKinematics(double coords[],[01;31m[KMatrix[m[K<double, 4, 3> &qsolutions){
+      |                                                    [01;31m[K^~~~~~[m[K
+[01m[K/home/alessio/RobotProgrammingProject/project_workspace/src/nodes_package/src/Robot_arm.cpp:50:58:[m[K [01;31m[Kerror: [m[Kexpected ‘[01m[K,[m[K’ or ‘[01m[K...[m[K’ before ‘[01m[K<[m[K’ token
+   50 |   bool analyticalInverseKinematics(double coords[],Matrix[01;31m[K<[m[Kdouble, 4, 3> &qsolutions){
+      |                                                          [01;31m[K^[m[K
+[01m[K/home/alessio/RobotProgrammingProject/project_workspace/src/nodes_package/src/Robot_arm.cpp:[m[K In member function ‘[01m[Kbool Robot_arm::analyticalInverseKinematics(double*, int)[m[K’:
+[01m[K/home/alessio/RobotProgrammingProject/project_workspace/src/nodes_package/src/Robot_arm.cpp:57:5:[m[K [01;31m[Kerror: [m[K‘[01m[Kl3[m[K’ was not declared in this scope; did you mean ‘[01m[Kl1[m[K’?
+   57 |     [01;31m[Kl3[m[K = this->l3;
+      |     [01;31m[K^~[m[K
+      |     [32m[Kl1[m[K
+[01m[K/home/alessio/RobotProgrammingProject/project_workspace/src/nodes_package/src/Robot_arm.cpp:57:16:[m[K [01;31m[Kerror: [m[K‘[01m[Kclass Robot_arm[m[K’ has no member named ‘[01m[Kl3[m[K’; did you mean ‘[01m[Kl1[m[K’?
+   57 |     l3 = this->[01;31m[Kl3[m[K;
+      |                [01;31m[K^~[m[K
+      |                [32m[Kl1[m[K
+[01m[K/home/alessio/RobotProgrammingProject/project_workspace/src/nodes_package/src/sender.cpp:[m[K In function ‘[01m[Kvoid inverseKinematics(Robot_arm, ros::Publisher, ros::Publisher, ros::Publisher, bool)[m[K’:
+[01m[K/home/alessio/RobotProgrammingProject/project_workspace/src/nodes_package/src/sender.cpp:131:44:[m[K [01;31m[Kerror: [m[Kcannot convert ‘[01m[KEigen::Matrix<double, 4, 3>[m[K’ to ‘[01m[Kint[m[K’
+  131 |       r.analyticalInverseKinematics(coords,[01;31m[Kqsolutions[m[K);
+      |                                            [01;31m[K^~~~~~~~~~[m[K
+      |                                            [01;31m[K|[m[K
+      |                                            [01;31m[KEigen::Matrix<double, 4, 3>[m[K
+In file included from [01m[K/home/alessio/RobotProgrammingProject/project_workspace/src/nodes_package/src/sender.cpp:9[m[K:
+[01m[K/home/alessio/RobotProgrammingProject/project_workspace/src/nodes_package/src/Robot_arm.cpp:50:52:[m[K [01;36m[Knote: [m[K  initializing argument 2 of ‘[01m[Kbool Robot_arm::analyticalInverseKinematics(double*, int)[m[K’
+   50 |   bool analyticalInverseKinematics(double coords[],[01;36m[KMatrix[m[K<double, 4, 3> &qsolutions){
+      |                                                    [01;36m[K^~~~~~[m[K
+make[2]: *** [CMakeFiles/sender.dir/build.make:63: CMakeFiles/sender.dir/src/sender.cpp.o] Error 1
+make[1]: *** [CMakeFiles/Makefile2:165: CMakeFiles/sender.dir/all] Error 2
+make: *** [Makefile:141: all] Error 2
