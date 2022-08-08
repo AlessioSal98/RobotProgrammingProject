@@ -94,42 +94,42 @@ bool analyticalInverseKinematics(double coords[],Matrix<double, 4, 3> &qsolution
 */
 
 
-void publishJointValues(double q[],ros::Publisher joint1,ros::Publisher joint2,ros::Publisher joint3){
+void publishJointValues(Vector3d q,ros::Publisher joint1,ros::Publisher joint2,ros::Publisher joint3){
   std_msgs::Float64 angle;
-  angle.data = q[0];
+  angle.data = q(0);
   joint1.publish(angle);
-  angle.data = q[1];
+  angle.data = q(1);
   joint2.publish(angle);
-  angle.data = q[2];
+  angle.data = q(2);
   joint3.publish(angle);
   cout << "published!" << endl;
 }
 
 void directKinematics(ros::Publisher joint1,ros::Publisher joint2,ros::Publisher joint3){
-  double q[3];
+  Vector3d q;
   cout << "DIRECT KINEMATICS" << endl;
   cout << "Insert joint values" << endl;
   cout << "q1:";
-  cin >> q[0];
+  cin >> q(0);
   cout << "q2:";
-  cin >> q[1];
+  cin >> q(1);
   cout << "q3:";
-  cin >> q[2];
+  cin >> q(2);
   publishJointValues(q,joint1,joint2,joint3);
 }
 
 void inverseKinematics(Robot3R r,ros::Publisher joint1,ros::Publisher joint2,ros::Publisher joint3,bool analytical){
-  double coords[3];
+  Vector3d coords;
   cout << "INVERSE KINEMATICS" << endl;
   cout << "Insert the desired coordinates:" << endl;
   cout << "X:";
-  cin >> coords[0];
+  cin >> coords(0);
   cout << "Y:";
-  cin >> coords[1];
+  cin >> coords(1);
   cout << "Z:";
-  cin >> coords[2];
+  cin >> coords(2);
   if(r.checkPointInsideWorkspace(coords)){
-    double q[3];
+    Vector3d q;
     if(analytical){
       Matrix<double, 4, 3> qsolutions;
       r.analyticalInverseKinematics(coords,qsolutions);
@@ -143,37 +143,29 @@ void inverseKinematics(Robot3R r,ros::Publisher joint1,ros::Publisher joint2,ros
         switch(sol){
           case 1:
           {
-            q[0] = qsolutions(0);
-            q[1] = qsolutions(4);
-            q[2] = qsolutions(8);
-            cout << "Publishing the solution " << sol << ":  [" << q[0] << "," << q[1] << "," << q[2] << "]" << endl;
+            q << qsolutions(0), qsolutions(4), qsolutions(8);
+            cout << "Publishing the solution " << sol << ":  [" << q(0) << "," << q(1) << "," << q(2) << "]" << endl;
             publishJointValues(q,joint1,joint2,joint3);
             break;
           }
           case 2:
           {
-            q[0] = qsolutions(1);
-            q[1] = qsolutions(5);
-            q[2] = qsolutions(9);
-            cout << "Publishing the solution " << sol << ":  [" << q[0] << "," << q[1] << "," << q[2] << "]" << endl;
+            q << qsolutions(1), qsolutions(5), qsolutions(9);
+            cout << "Publishing the solution " << sol << ":  [" << q(0) << "," << q(1) << "," << q(2) << "]" << endl;
             publishJointValues(q,joint1,joint2,joint3);
             break;
           }
           case 3:
           {
-            q[0] = qsolutions(2);
-            q[1] = qsolutions(6);
-            q[2] = qsolutions(10);
-            cout << "Publishing the solution " << sol << ":  [" << q[0] << "," << q[1] << "," << q[2] << "]" << endl;
+            q << qsolutions(2) , qsolutions(6) , qsolutions(10);
+            cout << "Publishing the solution " << sol << ":  [" << q(0) << "," << q(1) << "," << q(2) << "]" << endl;
             publishJointValues(q,joint1,joint2,joint3);
             break;
           }
           case 4:
           {
-            q[0] = qsolutions(3);
-            q[1] = qsolutions(7);
-            q[2] = qsolutions(11);
-            cout << "Publishing the solution " << sol << ":  [" << q[0] << "," << q[1] << "," << q[2] << "]" << endl;
+            q << qsolutions(3) , qsolutions(7) , qsolutions(11);
+            cout << "Publishing the solution " << sol << ":  [" << q(0) << "," << q(1) << "," << q(2) << "]" << endl;
             publishJointValues(q,joint1,joint2,joint3);
             break;
           }
@@ -192,7 +184,6 @@ void inverseKinematics(Robot3R r,ros::Publisher joint1,ros::Publisher joint2,ros
     cout << endl << "ERROR: Coordinates outside the workspace" <<  endl << endl;
   }
 }
-
 int main(int argc, char **argv)
 {
   ros::init(argc, argv, "Cobot_Sender"); //Node creation
@@ -204,13 +195,14 @@ int main(int argc, char **argv)
 
    ros::Rate loop_rate(1000);
    
-   double origin_[] = {0,0,2};
+   Vector3d origin_;
+   origin_ << 0,0,2;
    Robot3R r(2,1,1,origin_);
-   
-   cout << r.d << endl;
-   cout << r.l2 << endl;
-   cout << r.radius << endl;
-   cout << r.origin[0] << " " << r.origin[1] << " " << r.origin[2] << endl;
+   Vector3d q;
+   q << 0,0,0;
+   Matrix<double, 3, 3> j = r.jacobian(q);
+
+  
   /**
    * A count of how many messages we have sent. This is used to create
    * a unique string for each message.
@@ -240,7 +232,12 @@ int main(int argc, char **argv)
       }
       case 3:
       {
-        inverseKinematics(r,joint1,joint2,joint3,false);
+        //inverseKinematics(r,joint1,joint2,joint3,false);
+        Vector3d rd;
+        Vector3d q0;
+        rd << 0,2,2;
+        q0 << 0,1.57,1.57;
+        r.newtonMethod(rd,q0);
         break;
       }
       case 0:

@@ -1,0 +1,8 @@
+In file included from [01m[K/home/alessio/RobotProgrammingProject/project_workspace/src/nodes_package/src/sender.cpp:9[m[K:
+[01m[K/home/alessio/RobotProgrammingProject/project_workspace/src/nodes_package/src/Robot_arm.cpp:[m[K In member function ‘[01m[KEigen::Vector3d Robot3R::newtonMethod(Eigen::Vector3d, Eigen::Vector3d)[m[K’:
+[01m[K/home/alessio/RobotProgrammingProject/project_workspace/src/nodes_package/src/Robot_arm.cpp:54:25:[m[K [01;31m[Kerror: [m[K‘[01m[KEigen::Matrix3d[m[K’ {aka ‘[01m[Kclass Eigen::Matrix<double, 3, 3>[m[K’} has no member named ‘[01m[KisInvertible[m[K’
+   54 |     bool invertible = j.[01;31m[KisInvertible[m[K();
+      |                         [01;31m[K^~~~~~~~~~~~[m[K
+make[2]: *** [CMakeFiles/sender.dir/build.make:63: CMakeFiles/sender.dir/src/sender.cpp.o] Error 1
+make[1]: *** [CMakeFiles/Makefile2:165: CMakeFiles/sender.dir/all] Error 2
+make: *** [Makefile:141: all] Error 2

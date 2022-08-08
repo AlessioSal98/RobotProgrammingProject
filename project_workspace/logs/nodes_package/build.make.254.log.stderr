@@ -1,0 +1,13 @@
+[01m[K/home/alessio/RobotProgrammingProject/project_workspace/src/nodes_package/src/sender.cpp:[m[K In function ‘[01m[Kint main(int, char**)[m[K’:
+[01m[K/home/alessio/RobotProgrammingProject/project_workspace/src/nodes_package/src/sender.cpp:205:40:[m[K [01;31m[Kerror: [m[Kcannot convert ‘[01m[Kdouble [3][m[K’ to ‘[01m[KEigen::Vector3d[m[K’ {aka ‘[01m[KEigen::Matrix<double, 3, 1>[m[K’}
+  205 |    Matrix<double, 3, 3> j = r.jacobian([01;31m[Kq[m[K);
+      |                                        [01;31m[K^[m[K
+      |                                        [01;31m[K|[m[K
+      |                                        [01;31m[Kdouble [3][m[K
+In file included from [01m[K/home/alessio/RobotProgrammingProject/project_workspace/src/nodes_package/src/sender.cpp:9[m[K:
+[01m[K/home/alessio/RobotProgrammingProject/project_workspace/src/nodes_package/src/Robot_arm.cpp:36:42:[m[K [01;36m[Knote: [m[K  initializing argument 1 of ‘[01m[KEigen::Matrix<double, 3, 3> Robot3R::jacobian(Eigen::Vector3d)[m[K’
+   36 |   Matrix<double, 3, 3> jacobian([01;36m[KVector3d q[m[K){
+      |                                 [01;36m[K~~~~~~~~~^[m[K
+make[2]: *** [CMakeFiles/sender.dir/build.make:63: CMakeFiles/sender.dir/src/sender.cpp.o] Error 1
+make[1]: *** [CMakeFiles/Makefile2:165: CMakeFiles/sender.dir/all] Error 2
+make: *** [Makefile:141: all] Error 2

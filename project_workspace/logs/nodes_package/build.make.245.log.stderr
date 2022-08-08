@@ -1,0 +1,14 @@
+In file included from [01m[K/home/alessio/RobotProgrammingProject/project_workspace/src/nodes_package/src/sender.cpp:9[m[K:
+[01m[K/home/alessio/RobotProgrammingProject/project_workspace/src/nodes_package/src/Robot_arm.cpp:[m[K In member function ‘[01m[Kbool Robot3R::checkPointInsideWorkspace(Eigen::Vector3d)[m[K’:
+[01m[K/home/alessio/RobotProgrammingProject/project_workspace/src/nodes_package/src/Robot_arm.cpp:78:38:[m[K [01;31m[Kerror: [m[Kexpression cannot be used as a function
+   78 |     double diffX = coords[0]-origin(0[01;31m[K)[m[K;
+      |                                      [01;31m[K^[m[K
+[01m[K/home/alessio/RobotProgrammingProject/project_workspace/src/nodes_package/src/Robot_arm.cpp:79:38:[m[K [01;31m[Kerror: [m[Kexpression cannot be used as a function
+   79 |     double diffY = coords[1]-origin(1[01;31m[K)[m[K;
+      |                                      [01;31m[K^[m[K
+[01m[K/home/alessio/RobotProgrammingProject/project_workspace/src/nodes_package/src/Robot_arm.cpp:80:38:[m[K [01;31m[Kerror: [m[Kexpression cannot be used as a function
+   80 |     double diffZ = coords[2]-origin(2[01;31m[K)[m[K;
+      |                                      [01;31m[K^[m[K
+make[2]: *** [CMakeFiles/sender.dir/build.make:63: CMakeFiles/sender.dir/src/sender.cpp.o] Error 1
+make[1]: *** [CMakeFiles/Makefile2:165: CMakeFiles/sender.dir/all] Error 2
+make: *** [Makefile:141: all] Error 2
