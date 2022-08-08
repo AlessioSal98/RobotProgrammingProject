@@ -1,0 +1,10 @@
+[35m[1mScanning dependencies of target sender[0m
+[ 50%] [32mBuilding CXX object CMakeFiles/sender.dir/src/sender.cpp.o[0m
+In file included from [01m[K/home/alessio/RobotProgrammingProject/project_workspace/src/nodes_package/src/sender.cpp:9[m[K:
+[01m[K/home/alessio/RobotProgrammingProject/project_workspace/src/nodes_package/src/Robot_arm.cpp:[m[K In member function ‘[01m[KEigen::Vector3d Robot3R::newtonMethod(Eigen::Vector3d, Eigen::Vector3d)[m[K’:
+[01m[K/home/alessio/RobotProgrammingProject/project_workspace/src/nodes_package/src/Robot_arm.cpp:54:35:[m[K [01;31m[Kerror: [m[K‘[01m[Kyour_matrix[m[K’ was not declared in this scope
+   54 |     FullPivLU<Matrix3f> lu_decomp([01;31m[Kyour_matrix[m[K);
+      |                                   [01;31m[K^~~~~~~~~~~[m[K
+make[2]: *** [CMakeFiles/sender.dir/build.make:63: CMakeFiles/sender.dir/src/sender.cpp.o] Error 1
+make[1]: *** [CMakeFiles/Makefile2:165: CMakeFiles/sender.dir/all] Error 2
+make: *** [Makefile:141: all] Error 2

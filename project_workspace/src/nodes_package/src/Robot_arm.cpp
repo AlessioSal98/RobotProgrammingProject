@@ -12,23 +12,70 @@ using namespace Eigen;
     double l2;
     double l3; 
     double radius;
-    double origin[];
+    Vector3d origin;
 
-    Robot3R(double d_,double l2_,double l3_,double* origin_){
+    Robot3R(double d_,double l2_,double l3_,Vector3d origin_){
       d=d_;
       l2=l2_;
       l3=l3_;
       radius=l2+l3;
-      origin[0] = origin_[0];
-      origin[1] = origin_[1];
-      origin[2] = origin_[2];
+      origin << origin_(0),origin_(1),origin(2);
     };
 
+  Vector3d directKinematics(Vector3d q){
+    Vector3d r;
+    double q1 = q(0);
+    double q2 = q(1);
+    double q3 = q(2);
+    double d = this->d;
+    double l2 = this->l2;
+    double l3 = this->l3;
+    r << (cos(q1)*(l2*cos(q2)+l3*cos(q2+q3))), (sin(q1)*(l2*cos(q2)+l3*cos(q2+q3))), d+(l2*sin(q2))+(l3*sin(q2+q3));
+    return r;
+  }
+  Matrix3d jacobian(Vector3d q){
+    Matrix<double, 3, 3> j;
+    double q1 = q(0);
+    double q2 = q(1);
+    double q3 = q(2);
+    double d = this->d;
+    double l2 = this->l2;
+    double l3 = this->l3;
+    j << -sin(q1)*(l2*cos(q2)+l3*cos(q2+q3)),(-l2*sin(q2)-l3*sin(q2+q3)),-l3*sin(q2+q3),
+    cos(q1)*(l2*cos(q2)+l3*cos(q2+q3)),l2*cos(q2)+l3*cos(q2+q3),l3*sin(q2+q3),
+    0,l2*cos(q2)+l3*cos(q2+q3),l3*sin(q2+q3);
+    return j;
+  }
+
+  Vector3d newtonMethod(Vector3d rd,Vector3d q0){
+    Vector3d q;
+    q << 1,1,1;
+    Matrix3d j = jacobian(q0);
+
+    //TODO CHECK IF J IS INVERTIBLE (NON SINGULAR)
+    Matrix3d ji = j.inverse();
+    cout << ji << endl;
+    /*
+    bool stop = false;
+    q = q0;
+    cout << "q:" << q << endl;
+    while (stop==false)
+    {
+      Vector3d diff = rd-directKinematics(q);
+      if (diff.norm()<10e-3)
+          stop=true;
+      else
+          q = q+j*diff;
+    }
+    */
+    return q;
+  }
+
   //Checks if the required cartesian point is inside the workspace of the robot arm
-  bool checkPointInsideWorkspace(double* coords){
-    double diffX = coords[0]-origin[0];
-    double diffY = coords[1]-origin[1];
-    double diffZ = coords[2]-origin[2];
+  bool checkPointInsideWorkspace(Vector3d coords){
+    double diffX = coords(0)-origin(0);
+    double diffY = coords(1)-origin(1);
+    double diffZ = coords(2)-origin(2);
     bool res;
     if(((diffX*diffX)+(diffY*diffY)+(diffZ*diffZ))<=(radius*radius))
     {
@@ -54,10 +101,10 @@ using namespace Eigen;
     return x;
   }
   //Function that computes the values of q with inverse kinematics in the analytical way, it computes all the solution but returns only the first one
-  bool analyticalInverseKinematics(double coords[],Matrix<double, 4, 3> &qsolutions){
-    double px = coords[0];
-    double py = coords[1];
-    double pz = coords[2];
+  bool analyticalInverseKinematics(Vector3d coords,Matrix<double, 4, 3> &qsolutions){
+    double px = coords(0);
+    double py = coords(1);
+    double pz = coords(2);
     bool singularity = false;
     d = this->d;
     l2 = this->l2;
