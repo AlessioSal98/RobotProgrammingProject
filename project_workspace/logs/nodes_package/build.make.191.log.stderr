@@ -1,0 +1,50 @@
+In file included from [01m[K/home/alessio/RobotProgrammingProject/project_workspace/src/nodes_package/src/sender.cpp:9[m[K:
+[01m[K/home/alessio/RobotProgrammingProject/project_workspace/src/nodes_package/src/Robot_arm.cpp:13:57:[m[K [01;31m[Kerror: [m[Kexpected ‘[01m[K,[m[K’ or ‘[01m[K...[m[K’ before ‘[01m[Korigin_[m[K’
+   13 |     Robot_arm(double d_,double l1_,double l2_,double [] [01;31m[Korigin_[m[K){
+      |                                                         [01;31m[K^~~~~~~[m[K
+[01m[K/home/alessio/RobotProgrammingProject/project_workspace/src/nodes_package/src/Robot_arm.cpp:[m[K In constructor ‘[01m[KRobot_arm::Robot_arm(double, double, double, double*)[m[K’:
+[01m[K/home/alessio/RobotProgrammingProject/project_workspace/src/nodes_package/src/Robot_arm.cpp:18:19:[m[K [01;31m[Kerror: [m[K‘[01m[Korigin_[m[K’ was not declared in this scope; did you mean ‘[01m[Korigin[m[K’?
+   18 |       origin[0] = [01;31m[Korigin_[m[K[0];
+      |                   [01;31m[K^~~~~~~[m[K
+      |                   [32m[Korigin[m[K
+[01m[K/home/alessio/RobotProgrammingProject/project_workspace/src/nodes_package/src/sender.cpp:[m[K In function ‘[01m[Kint main(int, char**)[m[K’:
+[01m[K/home/alessio/RobotProgrammingProject/project_workspace/src/nodes_package/src/sender.cpp:200:11:[m[K [01;31m[Kerror: [m[Kscalar object ‘[01m[Korigin[m[K’ requires one element in initializer
+  200 |    double [01;31m[Korigin[m[K = {0,0,2}}
+      |           [01;31m[K^~~~~~[m[K
+[01m[K/home/alessio/RobotProgrammingProject/project_workspace/src/nodes_package/src/sender.cpp:200:27:[m[K [01;31m[Kerror: [m[Kexpected ‘[01m[K,[m[K’ or ‘[01m[K;[m[K’ before ‘[01m[K}[m[K’ token
+  200 |    double origin = {0,0,2}[01;31m[K}[m[K
+      |                           [01;31m[K^[m[K
+[01m[K/home/alessio/RobotProgrammingProject/project_workspace/src/nodes_package/src/sender.cpp:[m[K At global scope:
+[01m[K/home/alessio/RobotProgrammingProject/project_workspace/src/nodes_package/src/sender.cpp:201:22:[m[K [01;31m[Kerror: [m[Kinvalid conversion from ‘[01m[Kconst double*[m[K’ to ‘[01m[Kdouble*[m[K’ [[01;31m[K-fpermissive[m[K]
+  201 |    Robot_arm r(2,1,1,[01;31m[Korigin[m[K);
+      |                      [01;31m[K^~~~~~[m[K
+      |                      [01;31m[K|[m[K
+      |                      [01;31m[Kconst double*[m[K
+In file included from [01m[K/home/alessio/RobotProgrammingProject/project_workspace/src/nodes_package/src/sender.cpp:9[m[K:
+[01m[K/home/alessio/RobotProgrammingProject/project_workspace/src/nodes_package/src/Robot_arm.cpp:13:47:[m[K [01;36m[Knote: [m[K  initializing argument 4 of ‘[01m[KRobot_arm::Robot_arm(double, double, double, double*)[m[K’
+   13 |     Robot_arm(double d_,double l1_,double l2_,[01;36m[Kdouble [][m[K origin_){
+      |                                               [01;36m[K^~~~~~~~~[m[K
+[01m[K/home/alessio/RobotProgrammingProject/project_workspace/src/nodes_package/src/sender.cpp:203:4:[m[K [01;31m[Kerror: [m[K‘[01m[Kcout[m[K’ does not name a type
+  203 |    [01;31m[Kcout[m[K << r.d << endl;
+      |    [01;31m[K^~~~[m[K
+[01m[K/home/alessio/RobotProgrammingProject/project_workspace/src/nodes_package/src/sender.cpp:204:4:[m[K [01;31m[Kerror: [m[K‘[01m[Kcout[m[K’ does not name a type
+  204 |    [01;31m[Kcout[m[K << r.l1 << endl;
+      |    [01;31m[K^~~~[m[K
+[01m[K/home/alessio/RobotProgrammingProject/project_workspace/src/nodes_package/src/sender.cpp:205:4:[m[K [01;31m[Kerror: [m[K‘[01m[Kcout[m[K’ does not name a type
+  205 |    [01;31m[Kcout[m[K << r.radius << endl;
+      |    [01;31m[K^~~~[m[K
+[01m[K/home/alessio/RobotProgrammingProject/project_workspace/src/nodes_package/src/sender.cpp:206:4:[m[K [01;31m[Kerror: [m[K‘[01m[Kcout[m[K’ does not name a type
+  206 |    [01;31m[Kcout[m[K << r.origin[0] << " " << r.origin[1] << " " << r.origin[2] << endl;
+      |    [01;31m[K^~~~[m[K
+[01m[K/home/alessio/RobotProgrammingProject/project_workspace/src/nodes_package/src/sender.cpp:215:3:[m[K [01;31m[Kerror: [m[Kexpected unqualified-id before ‘[01m[Kwhile[m[K’
+  215 |   [01;31m[Kwhile[m[K (flag)
+      |   [01;31m[K^~~~~[m[K
+[01m[K/home/alessio/RobotProgrammingProject/project_workspace/src/nodes_package/src/sender.cpp:246:3:[m[K [01;31m[Kerror: [m[Kexpected unqualified-id before ‘[01m[Kreturn[m[K’
+  246 |   [01;31m[Kreturn[m[K 0;
+      |   [01;31m[K^~~~~~[m[K
+[01m[K/home/alessio/RobotProgrammingProject/project_workspace/src/nodes_package/src/sender.cpp:247:1:[m[K [01;31m[Kerror: [m[Kexpected declaration before ‘[01m[K}[m[K’ token
+  247 | [01;31m[K}[m[K
+      | [01;31m[K^[m[K
+make[2]: *** [CMakeFiles/sender.dir/build.make:63: CMakeFiles/sender.dir/src/sender.cpp.o] Error 1
+make[1]: *** [CMakeFiles/Makefile2:165: CMakeFiles/sender.dir/all] Error 2
+make: *** [Makefile:141: all] Error 2

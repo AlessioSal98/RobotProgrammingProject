@@ -1,0 +1,8 @@
+In file included from [01m[K/home/alessio/RobotProgrammingProject/project_workspace/src/nodes_package/src/sender.cpp:9[m[K:
+[01m[K/home/alessio/RobotProgrammingProject/project_workspace/src/nodes_package/src/Robot_arm.cpp:[m[K In constructor ‘[01m[KRobot_arm::Robot_arm(double, double, double)[m[K’:
+[01m[K/home/alessio/RobotProgrammingProject/project_workspace/src/nodes_package/src/Robot_arm.cpp:18:14:[m[K [01;31m[Kerror: [m[Kexpected primary-expression before ‘[01m[K][m[K’ token
+   18 |       origin[[01;31m[K][m[K = {0,0,d};
+      |              [01;31m[K^[m[K
+make[2]: *** [CMakeFiles/sender.dir/build.make:63: CMakeFiles/sender.dir/src/sender.cpp.o] Error 1
+make[1]: *** [CMakeFiles/Makefile2:165: CMakeFiles/sender.dir/all] Error 2
+make: *** [Makefile:141: all] Error 2

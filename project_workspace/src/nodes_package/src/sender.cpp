@@ -6,17 +6,22 @@
 #include <iostream>
 #include <cmath>
 #include <Eigen/Dense>
+#include "Robot_arm.cpp"
 
 using namespace std;
 using namespace Eigen;
 
 
+
+/*
 const double d = 2;
 const double l2 = 1;
 const double l3 = 1;
 const double radius = 2;
 const double origin[] = {0,0,d};
+*/
 
+/*
 //Checks if the required cartesian point is inside the workspace of the robot arm
 bool checkPointInsideWorkspace(double* coords){
   double diffX = coords[0]-origin[0];
@@ -31,7 +36,9 @@ bool checkPointInsideWorkspace(double* coords){
   }
   return res;
 }
+*/
 
+/*
 //Utility function used to solve a linear system when computing inverse kinematics
 Vector2d solveSystem(double cosq3,double q3, double q1, double px, double py, double pz){
   Matrix2d A;
@@ -42,7 +49,9 @@ Vector2d solveSystem(double cosq3,double q3, double q1, double px, double py, do
   x = A.colPivHouseholderQr().solve(b);
   return x;
 }
+*/
 
+/*
 //Function that computes the values of q with inverse kinematics in the analytical way, it computes all the solution but returns only the first one
 bool analyticalInverseKinematics(double coords[],Matrix<double, 4, 3> &qsolutions){
   double px = coords[0];
@@ -82,6 +91,7 @@ bool analyticalInverseKinematics(double coords[],Matrix<double, 4, 3> &qsolution
   }
   return singularity;
 }
+*/
 
 
 void publishJointValues(double q[],ros::Publisher joint1,ros::Publisher joint2,ros::Publisher joint3){
@@ -108,7 +118,7 @@ void directKinematics(ros::Publisher joint1,ros::Publisher joint2,ros::Publisher
   publishJointValues(q,joint1,joint2,joint3);
 }
 
-void inverseKinematics(ros::Publisher joint1,ros::Publisher joint2,ros::Publisher joint3){
+void inverseKinematics(Robot3R r,ros::Publisher joint1,ros::Publisher joint2,ros::Publisher joint3,bool analytical){
   double coords[3];
   cout << "INVERSE KINEMATICS" << endl;
   cout << "Insert the desired coordinates:" << endl;
@@ -118,60 +128,65 @@ void inverseKinematics(ros::Publisher joint1,ros::Publisher joint2,ros::Publishe
   cin >> coords[1];
   cout << "Z:";
   cin >> coords[2];
-  if(checkPointInsideWorkspace(coords)){
-    Matrix<double, 4, 3> qsolutions;
+  if(r.checkPointInsideWorkspace(coords)){
     double q[3];
-    analyticalInverseKinematics(coords,qsolutions);
-    bool exit=false;
-    while(!exit)
-    {
-      int sol;
-      cout << "Founded solutions:" << endl << qsolutions << endl;
-      cout << "Choose the solution to publish (1-4) or press 0 to exit:";
-      cin >> sol;
-      switch(sol){
-        case 1:
-        {
-          q[0] = qsolutions(0);
-          q[1] = qsolutions(4);
-          q[2] = qsolutions(8);
-          cout << "Publishing the solution " << sol << ":  [" << q[0] << "," << q[1] << "," << q[2] << "]" << endl;
-          publishJointValues(q,joint1,joint2,joint3);
-          break;
-        }
-        case 2:
-        {
-          q[0] = qsolutions(1);
-          q[1] = qsolutions(5);
-          q[2] = qsolutions(9);
-          cout << "Publishing the solution " << sol << ":  [" << q[0] << "," << q[1] << "," << q[2] << "]" << endl;
-          publishJointValues(q,joint1,joint2,joint3);
-          break;
-        }
-        case 3:
-        {
-          q[0] = qsolutions(2);
-          q[1] = qsolutions(6);
-          q[2] = qsolutions(10);
-          cout << "Publishing the solution " << sol << ":  [" << q[0] << "," << q[1] << "," << q[2] << "]" << endl;
-          publishJointValues(q,joint1,joint2,joint3);
-          break;
-        }
-        case 4:
-        {
-          q[0] = qsolutions(3);
-          q[1] = qsolutions(7);
-          q[2] = qsolutions(11);
-          cout << "Publishing the solution " << sol << ":  [" << q[0] << "," << q[1] << "," << q[2] << "]" << endl;
-          publishJointValues(q,joint1,joint2,joint3);
-          break;
-        }
-        case 0:
-        {
-          exit = true;
-          break;
+    if(analytical){
+      Matrix<double, 4, 3> qsolutions;
+      r.analyticalInverseKinematics(coords,qsolutions);
+      bool exit=false;
+      while(!exit)
+      {
+        int sol;
+        cout << "Founded solutions:" << endl << qsolutions << endl;
+        cout << "Choose the solution to publish (1-4) or press 0 to exit:";
+        cin >> sol;
+        switch(sol){
+          case 1:
+          {
+            q[0] = qsolutions(0);
+            q[1] = qsolutions(4);
+            q[2] = qsolutions(8);
+            cout << "Publishing the solution " << sol << ":  [" << q[0] << "," << q[1] << "," << q[2] << "]" << endl;
+            publishJointValues(q,joint1,joint2,joint3);
+            break;
+          }
+          case 2:
+          {
+            q[0] = qsolutions(1);
+            q[1] = qsolutions(5);
+            q[2] = qsolutions(9);
+            cout << "Publishing the solution " << sol << ":  [" << q[0] << "," << q[1] << "," << q[2] << "]" << endl;
+            publishJointValues(q,joint1,joint2,joint3);
+            break;
+          }
+          case 3:
+          {
+            q[0] = qsolutions(2);
+            q[1] = qsolutions(6);
+            q[2] = qsolutions(10);
+            cout << "Publishing the solution " << sol << ":  [" << q[0] << "," << q[1] << "," << q[2] << "]" << endl;
+            publishJointValues(q,joint1,joint2,joint3);
+            break;
+          }
+          case 4:
+          {
+            q[0] = qsolutions(3);
+            q[1] = qsolutions(7);
+            q[2] = qsolutions(11);
+            cout << "Publishing the solution " << sol << ":  [" << q[0] << "," << q[1] << "," << q[2] << "]" << endl;
+            publishJointValues(q,joint1,joint2,joint3);
+            break;
+          }
+          case 0:
+          {
+            exit = true;
+            break;
+          }
         }
       }
+    }
+    else{
+
     }
   }else{
     cout << endl << "ERROR: Coordinates outside the workspace" <<  endl << endl;
@@ -188,6 +203,14 @@ int main(int argc, char **argv)
   ros::Publisher joint3 = n.advertise<std_msgs::Float64>("/robot_arm/joint3_position_controller/command", 1000);
 
    ros::Rate loop_rate(1000);
+   
+   double origin_[] = {0,0,2};
+   Robot3R r(2,1,1,origin_);
+   
+   cout << r.d << endl;
+   cout << r.l2 << endl;
+   cout << r.radius << endl;
+   cout << r.origin[0] << " " << r.origin[1] << " " << r.origin[2] << endl;
   /**
    * A count of how many messages we have sent. This is used to create
    * a unique string for each message.
@@ -199,7 +222,8 @@ int main(int argc, char **argv)
   while (flag)
   {
     cout << "1)Direct Kinematics" << endl;
-    cout << "2)Inverse Kinematics" << endl;
+    cout << "2)Inverse Kinematics (Analytical)" << endl;
+    cout << "3)Inverse Kinematics (Numerical)" << endl;
     cout << "0)Exit" << endl;
     cout << "Insert your choice:";
     cin >> choice;
@@ -211,7 +235,12 @@ int main(int argc, char **argv)
       }
       case 2:
       {
-        inverseKinematics(joint1,joint2,joint3);
+        inverseKinematics(r,joint1,joint2,joint3,true);
+        break;
+      }
+      case 3:
+      {
+        inverseKinematics(r,joint1,joint2,joint3,false);
         break;
       }
       case 0:

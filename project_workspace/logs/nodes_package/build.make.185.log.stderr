@@ -1,0 +1,22 @@
+[01m[K/home/alessio/RobotProgrammingProject/project_workspace/src/nodes_package/src/sender.cpp:[m[K In function ‘[01m[Kint main(int, char**)[m[K’:
+[01m[K/home/alessio/RobotProgrammingProject/project_workspace/src/nodes_package/src/sender.cpp:200:14:[m[K [01;31m[Kerror: [m[Krequest for member ‘[01m[Kd[m[K’ in ‘[01m[Kr[m[K’, which is of pointer type ‘[01m[KRobot_arm*[m[K’ (maybe you meant to use ‘[01m[K->[m[K’ ?)
+  200 |    cout << r.[01;31m[Kd[m[K << endl;
+      |              [01;31m[K^[m[K
+[01m[K/home/alessio/RobotProgrammingProject/project_workspace/src/nodes_package/src/sender.cpp:201:14:[m[K [01;31m[Kerror: [m[Krequest for member ‘[01m[Kl1[m[K’ in ‘[01m[Kr[m[K’, which is of pointer type ‘[01m[KRobot_arm*[m[K’ (maybe you meant to use ‘[01m[K->[m[K’ ?)
+  201 |    cout << r.[01;31m[Kl1[m[K << endl;
+      |              [01;31m[K^~[m[K
+[01m[K/home/alessio/RobotProgrammingProject/project_workspace/src/nodes_package/src/sender.cpp:202:14:[m[K [01;31m[Kerror: [m[Krequest for member ‘[01m[Kradius[m[K’ in ‘[01m[Kr[m[K’, which is of pointer type ‘[01m[KRobot_arm*[m[K’ (maybe you meant to use ‘[01m[K->[m[K’ ?)
+  202 |    cout << r.[01;31m[Kradius[m[K << endl;
+      |              [01;31m[K^~~~~~[m[K
+[01m[K/home/alessio/RobotProgrammingProject/project_workspace/src/nodes_package/src/sender.cpp:203:14:[m[K [01;31m[Kerror: [m[Krequest for member ‘[01m[Korigin[m[K’ in ‘[01m[Kr[m[K’, which is of pointer type ‘[01m[KRobot_arm*[m[K’ (maybe you meant to use ‘[01m[K->[m[K’ ?)
+  203 |    cout << r.[01;31m[Korigin[m[K[0] << " " << r.origin[1] << " " << r.origin[2] << endl;
+      |              [01;31m[K^~~~~~[m[K
+[01m[K/home/alessio/RobotProgrammingProject/project_workspace/src/nodes_package/src/sender.cpp:203:36:[m[K [01;31m[Kerror: [m[Krequest for member ‘[01m[Korigin[m[K’ in ‘[01m[Kr[m[K’, which is of pointer type ‘[01m[KRobot_arm*[m[K’ (maybe you meant to use ‘[01m[K->[m[K’ ?)
+  203 |    cout << r.origin[0] << " " << r.[01;31m[Korigin[m[K[1] << " " << r.origin[2] << endl;
+      |                                    [01;31m[K^~~~~~[m[K
+[01m[K/home/alessio/RobotProgrammingProject/project_workspace/src/nodes_package/src/sender.cpp:203:58:[m[K [01;31m[Kerror: [m[Krequest for member ‘[01m[Korigin[m[K’ in ‘[01m[Kr[m[K’, which is of pointer type ‘[01m[KRobot_arm*[m[K’ (maybe you meant to use ‘[01m[K->[m[K’ ?)
+  203 |    cout << r.origin[0] << " " << r.origin[1] << " " << r.[01;31m[Korigin[m[K[2] << endl;
+      |                                                          [01;31m[K^~~~~~[m[K
+make[2]: *** [CMakeFiles/sender.dir/build.make:63: CMakeFiles/sender.dir/src/sender.cpp.o] Error 1
+make[1]: *** [CMakeFiles/Makefile2:165: CMakeFiles/sender.dir/all] Error 2
+make: *** [Makefile:141: all] Error 2

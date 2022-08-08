@@ -1,0 +1,77 @@
+In file included from [01m[K/home/alessio/RobotProgrammingProject/project_workspace/src/nodes_package/src/sender.cpp:9[m[K:
+[01m[K/home/alessio/RobotProgrammingProject/project_workspace/src/nodes_package/src/Robot_arm.cpp:40:3:[m[K [01;31m[Kerror: [m[K‘[01m[KVector2d[m[K’ does not name a type
+   40 |   [01;31m[KVector2d[m[K solveSystem(double cosq3,double q3, double q1, double px, double py, double pz){
+      |   [01;31m[K^~~~~~~~[m[K
+In file included from [01m[K/home/alessio/RobotProgrammingProject/project_workspace/src/nodes_package/src/sender.cpp:9[m[K:
+[01m[K/home/alessio/RobotProgrammingProject/project_workspace/src/nodes_package/src/Robot_arm.cpp:50:52:[m[K [01;31m[Kerror: [m[K‘[01m[KMatrix[m[K’ has not been declared
+   50 |   bool analyticalInverseKinematics(double coords[],[01;31m[KMatrix[m[K<double, 4, 3> &qsolutions){
+      |                                                    [01;31m[K^~~~~~[m[K
+[01m[K/home/alessio/RobotProgrammingProject/project_workspace/src/nodes_package/src/Robot_arm.cpp:50:58:[m[K [01;31m[Kerror: [m[Kexpected ‘[01m[K,[m[K’ or ‘[01m[K...[m[K’ before ‘[01m[K<[m[K’ token
+   50 |   bool analyticalInverseKinematics(double coords[],Matrix[01;31m[K<[m[Kdouble, 4, 3> &qsolutions){
+      |                                                          [01;31m[K^[m[K
+[01m[K/home/alessio/RobotProgrammingProject/project_workspace/src/nodes_package/src/Robot_arm.cpp:[m[K In member function ‘[01m[Kbool Robot_arm::analyticalInverseKinematics(double*, int)[m[K’:
+[01m[K/home/alessio/RobotProgrammingProject/project_workspace/src/nodes_package/src/Robot_arm.cpp:57:5:[m[K [01;31m[Kerror: [m[K‘[01m[Kl3[m[K’ was not declared in this scope; did you mean ‘[01m[Kl1[m[K’?
+   57 |     [01;31m[Kl3[m[K = this->l3;
+      |     [01;31m[K^~[m[K
+      |     [32m[Kl1[m[K
+[01m[K/home/alessio/RobotProgrammingProject/project_workspace/src/nodes_package/src/Robot_arm.cpp:57:16:[m[K [01;31m[Kerror: [m[K‘[01m[Kclass Robot_arm[m[K’ has no member named ‘[01m[Kl3[m[K’; did you mean ‘[01m[Kl1[m[K’?
+   57 |     l3 = this->[01;31m[Kl3[m[K;
+      |                [01;31m[K^~[m[K
+      |                [32m[Kl1[m[K
+[01m[K/home/alessio/RobotProgrammingProject/project_workspace/src/nodes_package/src/Robot_arm.cpp:74:11:[m[K [01;31m[Kerror: [m[K‘[01m[KVector2d[m[K’ was not declared in this scope; did you mean ‘[01m[KEigen::Vector2d[m[K’?
+   74 |           [01;31m[KVector2d[m[K xpp = solveSystem(cosq3,q3pos,q1pos,px,py,pz);
+      |           [01;31m[K^~~~~~~~[m[K
+      |           [32m[KEigen::Vector2d[m[K
+In file included from [01m[K/usr/include/eigen3/Eigen/Core:458[m[K,
+                 from [01m[K/usr/include/eigen3/Eigen/Dense:1[m[K,
+                 from [01m[K/home/alessio/RobotProgrammingProject/project_workspace/src/nodes_package/src/sender.cpp:8[m[K:
+[01m[K/usr/include/eigen3/Eigen/src/Core/Matrix.h:428:34:[m[K [01;36m[Knote: [m[K‘[01m[KEigen::Vector2d[m[K’ declared here
+  428 | typedef Matrix<Type, Size, 1>    [01;36m[KVector[m[K##SizeSuffix##TypeSuffix;  \
+      |                                  [01;36m[K^~~~~~[m[K
+[01m[K/usr/include/eigen3/Eigen/src/Core/Matrix.h:428:34:[m[K [01;36m[Knote: [m[Kin definition of macro ‘[01m[KEIGEN_MAKE_TYPEDEFS[m[K’
+  428 | typedef Matrix<Type, Size, 1>    [01;36m[KVector[m[K##SizeSuffix##TypeSuffix;  \
+      |                                  [01;36m[K^~~~~~[m[K
+[01m[K/usr/include/eigen3/Eigen/src/Core/Matrix.h:449:1:[m[K [01;36m[Knote: [m[Kin expansion of macro ‘[01m[KEIGEN_MAKE_TYPEDEFS_ALL_SIZES[m[K’
+  449 | [01;36m[KEIGEN_MAKE_TYPEDEFS_ALL_SIZES[m[K(double,               d)
+      | [01;36m[K^~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+In file included from [01m[K/home/alessio/RobotProgrammingProject/project_workspace/src/nodes_package/src/sender.cpp:9[m[K:
+[01m[K/home/alessio/RobotProgrammingProject/project_workspace/src/nodes_package/src/Robot_arm.cpp:75:19:[m[K [01;31m[Kerror: [m[Kexpected ‘[01m[K;[m[K’ before ‘[01m[Kxpn[m[K’
+   75 |           Vector2d[01;31m[K [m[K[32m[Kxpn[m[K = solveSystem(cosq3,q3pos,q1neg,px,py,pz);
+      |                   [01;31m[K^[m[K[32m[K~~~[m[K
+      |                   [32m[K;[m[K
+[01m[K/home/alessio/RobotProgrammingProject/project_workspace/src/nodes_package/src/Robot_arm.cpp:76:19:[m[K [01;31m[Kerror: [m[Kexpected ‘[01m[K;[m[K’ before ‘[01m[Kxnp[m[K’
+   76 |           Vector2d[01;31m[K [m[K[32m[Kxnp[m[K = solveSystem(cosq3,q3neg,q1pos,px,py,pz);
+      |                   [01;31m[K^[m[K[32m[K~~~[m[K
+      |                   [32m[K;[m[K
+[01m[K/home/alessio/RobotProgrammingProject/project_workspace/src/nodes_package/src/Robot_arm.cpp:77:19:[m[K [01;31m[Kerror: [m[Kexpected ‘[01m[K;[m[K’ before ‘[01m[Kxnn[m[K’
+   77 |           Vector2d[01;31m[K [m[K[32m[Kxnn[m[K = solveSystem(cosq3,q3neg,q1neg,px,py,pz);
+      |                   [01;31m[K^[m[K[32m[K~~~[m[K
+      |                   [32m[K;[m[K
+[01m[K/home/alessio/RobotProgrammingProject/project_workspace/src/nodes_package/src/Robot_arm.cpp:80:31:[m[K [01;31m[Kerror: [m[K‘[01m[Kxpp[m[K’ was not declared in this scope
+   80 |           double q2pp = atan2([01;31m[Kxpp[m[K(1),xpp(0));
+      |                               [01;31m[K^~~[m[K
+[01m[K/home/alessio/RobotProgrammingProject/project_workspace/src/nodes_package/src/Robot_arm.cpp:81:31:[m[K [01;31m[Kerror: [m[K‘[01m[Kxpn[m[K’ was not declared in this scope
+   81 |           double q2pn = atan2([01;31m[Kxpn[m[K(1),xpn(0));
+      |                               [01;31m[K^~~[m[K
+[01m[K/home/alessio/RobotProgrammingProject/project_workspace/src/nodes_package/src/Robot_arm.cpp:82:31:[m[K [01;31m[Kerror: [m[K‘[01m[Kxnp[m[K’ was not declared in this scope
+   82 |           double q2np = atan2([01;31m[Kxnp[m[K(1),xnp(0));
+      |                               [01;31m[K^~~[m[K
+[01m[K/home/alessio/RobotProgrammingProject/project_workspace/src/nodes_package/src/Robot_arm.cpp:83:31:[m[K [01;31m[Kerror: [m[K‘[01m[Kxnn[m[K’ was not declared in this scope
+   83 |           double q2nn = atan2([01;31m[Kxnn[m[K(1),xnn(0));
+      |                               [01;31m[K^~~[m[K
+[01m[K/home/alessio/RobotProgrammingProject/project_workspace/src/nodes_package/src/Robot_arm.cpp:86:11:[m[K [01;31m[Kerror: [m[K‘[01m[Kqsolutions[m[K’ was not declared in this scope
+   86 |           [01;31m[Kqsolutions[m[K << q1pos,q2pp,q3pos , q1pos,q2pn,q3neg, q1neg,q2np,q3pos, q1neg,q2nn,q3neg;
+      |           [01;31m[K^~~~~~~~~~[m[K
+[01m[K/home/alessio/RobotProgrammingProject/project_workspace/src/nodes_package/src/sender.cpp:[m[K In function ‘[01m[Kvoid inverseKinematics(Robot_arm, ros::Publisher, ros::Publisher, ros::Publisher, bool)[m[K’:
+[01m[K/home/alessio/RobotProgrammingProject/project_workspace/src/nodes_package/src/sender.cpp:131:44:[m[K [01;31m[Kerror: [m[Kcannot convert ‘[01m[KEigen::Matrix<double, 4, 3>[m[K’ to ‘[01m[Kint[m[K’
+  131 |       r.analyticalInverseKinematics(coords,[01;31m[Kqsolutions[m[K);
+      |                                            [01;31m[K^~~~~~~~~~[m[K
+      |                                            [01;31m[K|[m[K
+      |                                            [01;31m[KEigen::Matrix<double, 4, 3>[m[K
+In file included from [01m[K/home/alessio/RobotProgrammingProject/project_workspace/src/nodes_package/src/sender.cpp:9[m[K:
+[01m[K/home/alessio/RobotProgrammingProject/project_workspace/src/nodes_package/src/Robot_arm.cpp:50:52:[m[K [01;36m[Knote: [m[K  initializing argument 2 of ‘[01m[Kbool Robot_arm::analyticalInverseKinematics(double*, int)[m[K’
+   50 |   bool analyticalInverseKinematics(double coords[],[01;36m[KMatrix[m[K<double, 4, 3> &qsolutions){
+      |                                                    [01;36m[K^~~~~~[m[K
+make[2]: *** [CMakeFiles/sender.dir/build.make:63: CMakeFiles/sender.dir/src/sender.cpp.o] Error 1
+make[1]: *** [CMakeFiles/Makefile2:165: CMakeFiles/sender.dir/all] Error 2
+make: *** [Makefile:141: all] Error 2
