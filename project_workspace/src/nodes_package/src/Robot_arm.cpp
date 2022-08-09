@@ -18,8 +18,8 @@ using namespace Eigen;
       d=d_;
       l2=l2_;
       l3=l3_;
-      radius=l2+l3;
-      origin << origin_(0),origin_(1),origin(2);
+      radius=l2_+l3_;
+      origin << origin_(0),origin_(1),origin_(2);
     };
 
   Vector3d directKinematics(Vector3d q){
@@ -41,9 +41,15 @@ using namespace Eigen;
     double d = this->d;
     double l2 = this->l2;
     double l3 = this->l3;
+    j << sin(q1)*(-l2*cos(q2)-l3*cos(q2+q3)),   cos(q1)*(-l2*sin(q2)-l3*sin(q2+q3)),    cos(q1)*(-l3*sin(q2+q3)),
+    cos(q1)*(l2*cos(q2)+l3*cos(q2+q3)),   sin(q1)*(-l2*sin(q2)-l3*sin(q2+q3)),    -sin(q1)*sin(q2+q3),
+    0,    l2*cos(q2)+l3*cos(q2+q3),   l3*cos(q2+q3);
+
+    /*
     j << -sin(q1)*(l2*cos(q2)+l3*cos(q2+q3)),(-l2*sin(q2)-l3*sin(q2+q3)),-l3*sin(q2+q3),
     cos(q1)*(l2*cos(q2)+l3*cos(q2+q3)),l2*cos(q2)+l3*cos(q2+q3),l3*sin(q2+q3),
     0,l2*cos(q2)+l3*cos(q2+q3),l3*sin(q2+q3);
+    */
     return j;
   }
 
@@ -71,13 +77,34 @@ using namespace Eigen;
     return q;
   }
 
+  Vector3d gradientMethod(Vector3d rd,Vector3d q0,double epsilon,double alpha){
+    bool stop = false;
+    Vector3d q = q0;
+    Vector3d diff;
+    cout << "Computing the inverse kinematics...." << endl;
+    while(stop==false){
+      q = q0;
+      Matrix3d j = jacobian(q).transpose();
+      diff = rd-directKinematics(q);
+      if(diff.norm()<epsilon){
+        stop=true;
+      }
+      else{
+        q0 = q+alpha*j*diff;
+      }
+    }
+    return q;
+  }
+
   //Checks if the required cartesian point is inside the workspace of the robot arm
   bool checkPointInsideWorkspace(Vector3d coords){
+    Vector3d origin = this->origin;
+    double radius = this->radius;
     double diffX = coords(0)-origin(0);
     double diffY = coords(1)-origin(1);
     double diffZ = coords(2)-origin(2);
     bool res;
-    if(((diffX*diffX)+(diffY*diffY)+(diffZ*diffZ))<=(radius*radius))
+    if((pow(diffX,2)+pow(diffY,2)+pow(diffZ,2))<=pow(radius,2))
     {
       res = true;
     }else{
