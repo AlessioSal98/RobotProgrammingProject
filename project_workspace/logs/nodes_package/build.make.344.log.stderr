@@ -1,0 +1,7 @@
+[01m[K/home/alessio/RobotProgrammingProject/project_workspace/src/nodes_package/src/receiver.cpp:[m[K In function ‘[01m[Kvoid linksCallback(const LinkStates&)[m[K’:
+[01m[K/home/alessio/RobotProgrammingProject/project_workspace/src/nodes_package/src/receiver.cpp:23:31:[m[K [01;31m[Kerror: [m[Kno match for ‘[01m[Koperator[][m[K’ (operand types are ‘[01m[Kconst _position_type[m[K’ {aka ‘[01m[Kconst geometry_msgs::Point_<std::allocator<void> >[m[K’} and ‘[01m[Kint[m[K’)
+   23 |   cout << msg.pose[3].position[01;31m[K[[m[K0] << endl;
+      |                               [01;31m[K^[m[K
+make[2]: *** [CMakeFiles/receiver.dir/build.make:63: CMakeFiles/receiver.dir/src/receiver.cpp.o] Error 1
+make[1]: *** [CMakeFiles/Makefile2:236: CMakeFiles/receiver.dir/all] Error 2
+make: *** [Makefile:141: all] Error 2

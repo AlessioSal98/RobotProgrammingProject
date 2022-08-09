@@ -1,0 +1,13 @@
+[35m[1mScanning dependencies of target receiver[0m
+[ 25%] [32mBuilding CXX object CMakeFiles/receiver.dir/src/receiver.cpp.o[0m
+[ 75%] Built target sender
+[01m[K/home/alessio/RobotProgrammingProject/project_workspace/src/nodes_package/src/receiver.cpp:[m[K In function ‘[01m[Kvoid linksCallback(const LinkStates&)[m[K’:
+[01m[K/home/alessio/RobotProgrammingProject/project_workspace/src/nodes_package/src/receiver.cpp:24:35:[m[K [01;31m[Kerror: [m[Kexpected unqualified-id before ‘[01m[K<[m[K’ token
+   24 |   double z = msg.pose[3].position.[01;31m[K<[m[K;
+      |                                   [01;31m[K^[m[K
+[01m[K/home/alessio/RobotProgrammingProject/project_workspace/src/nodes_package/src/receiver.cpp:24:36:[m[K [01;31m[Kerror: [m[Kexpected primary-expression before ‘[01m[K;[m[K’ token
+   24 |   double z = msg.pose[3].position.<[01;31m[K;[m[K
+      |                                    [01;31m[K^[m[K
+make[2]: *** [CMakeFiles/receiver.dir/build.make:63: CMakeFiles/receiver.dir/src/receiver.cpp.o] Error 1
+make[1]: *** [CMakeFiles/Makefile2:236: CMakeFiles/receiver.dir/all] Error 2
+make: *** [Makefile:141: all] Error 2

@@ -1,0 +1,7 @@
+[01m[K/home/alessio/RobotProgrammingProject/project_workspace/src/nodes_package/src/receiver.cpp:[m[K In function ‘[01m[Kint main(int, char**)[m[K’:
+[01m[K/home/alessio/RobotProgrammingProject/project_workspace/src/nodes_package/src/receiver.cpp:22:55:[m[K [01;31m[Kerror: [m[K‘[01m[KclockCallback[m[K’ was not declared in this scope
+   22 |   ros::Subscriber clockSub = n.subscribe("/clock", 1, [01;31m[KclockCallback[m[K);
+      |                                                       [01;31m[K^~~~~~~~~~~~~[m[K
+make[2]: *** [CMakeFiles/receiver.dir/build.make:63: CMakeFiles/receiver.dir/src/receiver.cpp.o] Error 1
+make[1]: *** [CMakeFiles/Makefile2:167: CMakeFiles/receiver.dir/all] Error 2
+make: *** [Makefile:141: all] Error 2
