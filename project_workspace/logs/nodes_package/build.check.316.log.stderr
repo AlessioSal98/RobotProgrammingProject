@@ -1,0 +1,9 @@
+[31m[1mCMake Error[0m at /home/alessio/RobotProgrammingProject/project_workspace/src/nodes_package/CMakeLists.txt:138 (add_executable):
+  add_executable cannot create target "sender" because another target with
+  the same name already exists.  The existing target is an executable created
+  in source directory
+  "/home/alessio/RobotProgrammingProject/project_workspace/src/nodes_package".
+  See documentation for policy CMP0002 for more details.
+
+
+make: *** [Makefile:714: cmake_check_build_system] Error 1

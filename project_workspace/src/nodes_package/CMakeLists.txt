@@ -11,6 +11,7 @@ find_package(catkin REQUIRED COMPONENTS
   roscpp
   sensor_msgs
   std_msgs
+  gazebo_msgs
 )
 
 ## System dependencies are found with CMake's conventions
@@ -135,6 +136,7 @@ include_directories(
 ## The recommended prefix ensures that target names across packages don't collide
 include_directories(. /usr/include/eigen3)
 add_executable(sender src/sender.cpp)
+add_executable(receiver src/receiver.cpp)
 
 
 
@@ -150,6 +152,10 @@ add_executable(sender src/sender.cpp)
 
 ## Specify libraries to link a library or executable target against
 target_link_libraries(sender
+  ${catkin_LIBRARIES}
+)
+
+target_link_libraries(receiver
   ${catkin_LIBRARIES}
 )
 
