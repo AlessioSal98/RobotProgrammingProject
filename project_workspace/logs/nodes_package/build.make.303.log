@@ -1,0 +1,15 @@
+[35m[1mScanning dependencies of target sender[0m
+[ 50%] [32mBuilding CXX object CMakeFiles/sender.dir/src/sender.cpp.o[0m
+In file included from [01m[K/home/alessio/RobotProgrammingProject/project_workspace/src/nodes_package/src/sender.cpp:9[m[K:
+[01m[K/home/alessio/RobotProgrammingProject/project_workspace/src/nodes_package/src/Robot_arm.cpp:[m[K In member function ‘[01m[KEigen::Vector3d Robot3R::gradientMethod(Eigen::Vector3d, Eigen::Vector3d, double, double)[m[K’:
+[01m[K/home/alessio/RobotProgrammingProject/project_workspace/src/nodes_package/src/Robot_arm.cpp:92:3:[m[K [01;35m[Kwarning: [m[Kno return statement in function returning non-void [[01;35m[K-Wreturn-type[m[K]
+   92 |   [01;35m[K}[m[K
+      |   [01;35m[K^[m[K
+[01m[K/home/alessio/RobotProgrammingProject/project_workspace/src/nodes_package/src/sender.cpp:[m[K In function ‘[01m[Kvoid inverseKinematics(Robot3R, ros::Publisher, ros::Publisher, ros::Publisher, bool)[m[K’:
+[01m[K/home/alessio/RobotProgrammingProject/project_workspace/src/nodes_package/src/sender.cpp:183:24:[m[K [01;31m[Kerror: [m[K‘[01m[Krd[m[K’ was not declared in this scope; did you mean ‘[01m[Kr[m[K’?
+  183 |       r.gradientMethod([01;31m[Krd[m[K,q0,0.001,0.001);
+      |                        [01;31m[K^~[m[K
+      |                        [32m[Kr[m[K
+make[2]: *** [CMakeFiles/sender.dir/build.make:63: CMakeFiles/sender.dir/src/sender.cpp.o] Error 1
+make[1]: *** [CMakeFiles/Makefile2:165: CMakeFiles/sender.dir/all] Error 2
+make: *** [Makefile:141: all] Error 2

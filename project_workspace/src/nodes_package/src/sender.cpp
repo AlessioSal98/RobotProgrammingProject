@@ -105,7 +105,7 @@ void publishJointValues(Vector3d q,ros::Publisher joint1,ros::Publisher joint2,r
   cout << "published!" << endl;
 }
 
-void directKinematics(ros::Publisher joint1,ros::Publisher joint2,ros::Publisher joint3){
+void directKinematics(Robot3R r,ros::Publisher joint1,ros::Publisher joint2,ros::Publisher joint3){
   Vector3d q;
   cout << "DIRECT KINEMATICS" << endl;
   cout << "Insert joint values" << endl;
@@ -115,6 +115,7 @@ void directKinematics(ros::Publisher joint1,ros::Publisher joint2,ros::Publisher
   cin >> q(1);
   cout << "q3:";
   cin >> q(2);
+  cout << "End Effector coordinates:" << r.directKinematics(q) << endl;
   publishJointValues(q,joint1,joint2,joint3);
 }
 
@@ -178,7 +179,10 @@ void inverseKinematics(Robot3R r,ros::Publisher joint1,ros::Publisher joint2,ros
       }
     }
     else{
-
+      Vector3d q0;
+      q0 << 0,0,0;
+      q = r.gradientMethod(coords,q0,0.01,0.001);
+      publishJointValues(q,joint1,joint2,joint3);
     }
   }else{
     cout << endl << "ERROR: Coordinates outside the workspace" <<  endl << endl;
@@ -222,7 +226,7 @@ int main(int argc, char **argv)
     switch(choice){
       case 1:
       {
-        directKinematics(joint1,joint2,joint3);
+        directKinematics(r,joint1,joint2,joint3);
         break;
       }
       case 2:
@@ -232,12 +236,7 @@ int main(int argc, char **argv)
       }
       case 3:
       {
-        //inverseKinematics(r,joint1,joint2,joint3,false);
-        Vector3d rd;
-        Vector3d q0;
-        rd << 0,2,2;
-        q0 << 0,1.57,1.57;
-        r.newtonMethod(rd,q0);
+        inverseKinematics(r,joint1,joint2,joint3,false);
         break;
       }
       case 0:
