@@ -44,37 +44,7 @@ using namespace Eigen;
     j << sin(q1)*(-l2*cos(q2)-l3*cos(q2+q3)),   cos(q1)*(-l2*sin(q2)-l3*sin(q2+q3)),    cos(q1)*(-l3*sin(q2+q3)),
     cos(q1)*(l2*cos(q2)+l3*cos(q2+q3)),   sin(q1)*(-l2*sin(q2)-l3*sin(q2+q3)),    -sin(q1)*sin(q2+q3),
     0,    l2*cos(q2)+l3*cos(q2+q3),   l3*cos(q2+q3);
-
-    /*
-    j << -sin(q1)*(l2*cos(q2)+l3*cos(q2+q3)),(-l2*sin(q2)-l3*sin(q2+q3)),-l3*sin(q2+q3),
-    cos(q1)*(l2*cos(q2)+l3*cos(q2+q3)),l2*cos(q2)+l3*cos(q2+q3),l3*sin(q2+q3),
-    0,l2*cos(q2)+l3*cos(q2+q3),l3*sin(q2+q3);
-    */
     return j;
-  }
-
-  Vector3d newtonMethod(Vector3d rd,Vector3d q0){
-    Vector3d q;
-    q << 1,1,1;
-    Matrix3d j = jacobian(q0);
-
-    //TODO CHECK IF J IS INVERTIBLE (NON SINGULAR)
-    Matrix3d ji = j.inverse();
-    cout << ji << endl;
-    /*
-    bool stop = false;
-    q = q0;
-    cout << "q:" << q << endl;
-    while (stop==false)
-    {
-      Vector3d diff = rd-directKinematics(q);
-      if (diff.norm()<10e-3)
-          stop=true;
-      else
-          q = q+j*diff;
-    }
-    */
-    return q;
   }
 
   Vector3d gradientMethod(Vector3d rd,Vector3d q0,double epsilon,double alpha){
