@@ -3,8 +3,8 @@ The idea of this project is to use ROS and Gazebo in order to build and simulate
 
 
 # How to run the project
-## Ros and Gazebo
-In order to run the project it is first necessary to boot Ros and Gazebo:
+## ROS and Gazebo
+In order to run the project it is first necessary to boot ROS and Gazebo:
 * Open a new terminal-->roscore
 * Open a new terminal-->rosrun gazebo_ros gazebo
 ## Visualize the robot in gazebo
@@ -15,3 +15,9 @@ Once gazebo is open, it is necessary to spawn the robot inside it, this can be d
 * roslaunch robot_package spawn.launch
 The robot will now appear in Gazebo
 ## Start the Sender and Receiver nodes
+The sender and receiver nodes are the main component of this project, since they are used for the communication in ROS.
+In order to run them is is simply necessary to execute the following steps:
+* Open a new terminal (one for each of the two nodes)
+* Navigate in the project_workspace folder
+* source devel/setup.bash
+* rosrun nodes_package sender (rosrun nodes_package receiver for the receiver node)
