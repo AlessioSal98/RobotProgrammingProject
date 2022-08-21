@@ -35,4 +35,4 @@ The receiver node is the simplest of the two developed nodes as it works as a re
 The main function instantiates a ROS subsriber object that subscribes to the */gazebo/link_states* topic.
 A callback function is then used for printing the coordinates.
 ## Sender node
-
+The sender node is the main program of this project as it works as an interface between the user, that will provide some commands for the robot, and the ROS topics that will handle the position of the individual joints of the robot
