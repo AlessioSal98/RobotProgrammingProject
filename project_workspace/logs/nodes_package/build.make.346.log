@@ -1,5 +1,0 @@
-[35m[1mScanning dependencies of target receiver[0m
-[ 50%] Built target sender
-[ 75%] [32mBuilding CXX object CMakeFiles/receiver.dir/src/receiver.cpp.o[0m
-[100%] [32m[1mLinking CXX executable /home/alessio/RobotProgrammingProject/project_workspace/devel/.private/nodes_package/lib/nodes_package/receiver[0m
-[100%] Built target receiver
