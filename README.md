@@ -29,7 +29,7 @@ In order to run them is is simply necessary to execute the following steps:
 * Command: source devel/setup.bash
 * Command: rosrun nodes_package sender (rosrun nodes_package receiver for the receiver node)
 
-# How to use the nodes
+# Description of the nodes
 ## Receiver node
 The receiver node is the simplest of the two developed nodes as it works as a read only interface that constantly prints the position of the robot end effector in terms of 3D coordinates.
 The main function instantiates a ROS subsriber object that subscribes to the */gazebo/link_states* topic.
@@ -47,5 +47,15 @@ This is the simplest functionality of the node, because it allows to specify the
 * */robot_arm/joint1_position_controller/command*
 * */robot_arm/joint2_position_controller/command*
 * */robot_arm/joint3_position_controller/command*
+
 The information relative to each individual node, is stored inside a *std_msgs::Float64* object
 ### Inverse Kinematics (Analytical)
+This part of the node asks the user to specify, from keyboard, the desired coordinates that the end effector of the robot should reach.
+First, a check about the feasibilty of the task is made, by ensuring that the desired coordinates are inside the workspace of the robot.
+If the task is feasible, then the *Robot3R::analyticalInverseKinematics* is called, and it will produce 4 possible inverse kinematics solutions, that will correspond to 4 joint configurations. In particular, the provided solution for this robot type are:
+* Forward/Elbow Up
+* Forward/Elbow Down
+* Backward/Elbow up
+* Backward/Elbow down
+
+Once those solutions are computed, it is possible to choose one among them and then the joint configuration will be properly published on the relative topics
