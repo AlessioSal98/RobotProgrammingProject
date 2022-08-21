@@ -133,7 +133,7 @@ using namespace Eigen;
           double q2np = atan2(xnp(1),xnp(0));
           double q2nn = atan2(xnn(1),xnn(0));
 
-          qsolutions << q1pos,q2pp,q3pos , q1pos,q2pn,q3neg, q1neg,q2np,q3pos, q1neg,q2nn,q3neg;
+          qsolutions << q1pos,q2pp,q3pos , q1pos,q2np,q3neg, q1neg,q2pn,q3pos, q1neg,q2nn,q3neg;
           
         }
       }
