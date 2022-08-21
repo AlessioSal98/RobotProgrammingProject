@@ -27,4 +27,12 @@ In order to run them is is simply necessary to execute the following steps:
 * Open a new terminal (one for each of the two nodes)
 * Navigate in the project_workspace folder
 * Command: source devel/setup.bash
-* Command: osrun nodes_package sender (rosrun nodes_package receiver for the receiver node)
+* Command: rosrun nodes_package sender (rosrun nodes_package receiver for the receiver node)
+
+# How to use the nodes
+## Receiver node
+The receiver node is the simplest of the two developed nodes as it works as a read only interface that constantly prints the position of the robot end effector in terms of 3D coordinates.
+The main function instantiates a ROS subsriber object that subscribes to the */gazebo/link_states* topic.
+A callback function is then used for printing the coordinates.
+## Sender node
+
