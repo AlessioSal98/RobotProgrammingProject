@@ -59,3 +59,7 @@ If the task is feasible, then the *Robot3R::analyticalInverseKinematics* is call
 * Backward/Elbow down
 
 Once those solutions are computed, it is possible to choose one among them and then the joint configuration will be properly published on the relative topics
+### Inverse Kinematics (Numerical)
+This is another type of Inverse Kinematics that allows to find one of the possible inverse kinematics solution by applying a numerical method.
+In this case, the used method is the Gradient Method that, given a start configuration, a value alpha, an error tollerance epsilon and the robot jacobian(which is defined in the Robot3R class) will provide as output a possible joint configuration that solves the required inverse kinematics task
+
