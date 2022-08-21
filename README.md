@@ -63,3 +63,4 @@ Once those solutions are computed, it is possible to choose one among them and t
 This is another type of Inverse Kinematics that allows to find one of the possible inverse kinematics solution by applying a numerical method.
 In this case, the used method is the Gradient Method that, given a start configuration, a value alpha, an error tollerance epsilon and the robot jacobian(which is defined in the Robot3R class) will provide as output a possible joint configuration that solves the required inverse kinematics task
 
+Finally, in order to verify the correctness of the solutions, it is sufficient to run the Receiver node and check if the required/expected cartesian coordinates of the end effector are the same that are received from this node.
