@@ -35,4 +35,17 @@ The receiver node is the simplest of the two developed nodes as it works as a re
 The main function instantiates a ROS subsriber object that subscribes to the */gazebo/link_states* topic.
 A callback function is then used for printing the coordinates.
 ## Sender node
-The sender node is the main program of this project as it works as an interface between the user, that will provide some commands for the robot, and the ROS topics that will handle the position of the individual joints of the robot
+The sender node is the main program of this project as it works as an interface between the user, that will provide some commands for the robot, and the ROS topics that will handle the position of the individual joints of the robot.
+In order to mantain some information strictly related to the robot that is being used (such as the direct kinematics or the jacobian of the defined 3R elbow-type robot) a new class Robot3R has been defined.
+The sender node will provide a menu with the following commands that is possible to give to the robot:
+* Direct Kinematics
+* Inverse Kinematics (Analytical)
+* Inverse Kinematics (Numerical)
+
+### Direct Kinematics
+This is the simplest functionality of the node, because it allows to specify the orientation of the 3 joints directly from keyboard and then send the information to the relative ROS topic, which are, in this case:
+* */robot_arm/joint1_position_controller/command*
+* */robot_arm/joint2_position_controller/command*
+* */robot_arm/joint3_position_controller/command*
+The information relative to each individual node, is stored inside a *std_msgs::Float64* object
+### Inverse Kinematics (Analytical)
